@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<process xmlns="http://drools.org/drools-5.0/process"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+         xs:schemaLocation="http://drools.org/drools-5.0/process drools-processes-5.0.xsd"
+         type="RuleFlow" name="flow" id="com.hd11.process.ihu.AnmeldungBearbeiten" package-name="com.hd11.process.ihu" version="0.1" >
+
+  <header>
+    <imports>
+      <import name="com.hd11.process.ihu.model.AdminList" />
+    </imports>
+    <variables>
+      <variable name="service_actorId" >
+        <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+      </variable>
+      <variable name="service_status" >
+        <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+      </variable>
+      <variable name="userApplication" >
+        <type name="org.drools.process.core.datatype.impl.type.ObjectDataType" className="com.senacor.hd11.model.UserApplication" />
+      </variable>
+      <variable name="service_adminList" >
+        <type name="org.drools.process.core.datatype.impl.type.ObjectDataType" className="com.hd11.process.ihu.model.AdminList" />
+      </variable>
+    </variables>
+  </header>
+
+  <nodes>
+    <humanTask id="2" name="Anmedlung bearbeiten" x="210" y="60" width="211" height="145" >
+      <work name="Human Task" >
+        <parameter name="ActorId" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+          <value>#{service_adminList}</value>
+        </parameter>
+        <parameter name="Comment" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+          <value>Hallo,  möchten Sie den folgenden User für den Chat freigeben:  UUID: #{userApplication.getAppuuid()} Firstname: #{userApplication.getUser().getFirstname()} Lastname:  #{userApplication.getUser().getLastname()}    Mfg </value>
+        </parameter>
+        <parameter name="Content" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+        <parameter name="Priority" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+        <parameter name="Skippable" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+          <value>false</value>
+        </parameter>
+        <parameter name="TaskName" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+          <value>Anmeldung bearbeiten</value>
+        </parameter>
+      </work>
+      <mapping type="in" from="userApplication" to="Content" />
+      <mapping type="out" from="ActorId" to="service_actorId" />
+      <mapping type="out" from="result" to="userApplication" />
+      <mapping type="out" from="task_status" to="service_status" />
+      <onEntry>
+        <action type="expression" dialect="java" ></action>
+      </onEntry>
+      <onExit>
+        <action type="expression" dialect="java" >System.out.println("Bearbeiten AdminList anfang: "+service_adminList.toString());
+service_adminList.remove(service_actorId);
+System.out.println("Bearbeiten AdminList ende:"+service_adminList.toString());</action>
+        <action type="expression" dialect="java" >System.out.println("Exit Anmeldung bearbeiten: "+userApplication.getAppuuid()+"("+userApplication.getState()+")");</action>
+      </onExit>
+    </humanTask>
+    <actionNode id="4" name="Logausgabe_Anmeldung" x="504" y="62" width="209" height="146" >
+        <action type="expression" dialect="java" >System.out.println("Die Anmeldung des Users "+userApplication.getUser().getFirstname()+" "+userApplication.getUser().getLastname()+" [UUID:"+userApplication.getAppuuid()+"] wurde von "+service_actorId+" auf "+userApplication.getState()+" gesetzt.");</action>
+    </actionNode>
+    <start id="1" name="Start" x="103" y="108" width="48" height="48" />
+    <end id="3" name="End" x="812" y="109" width="48" height="48" />
+    <humanTask id="5" name="Anmeldung freigeben" x="480" y="240" width="221" height="105" >
+      <work name="Human Task" >
+        <parameter name="ActorId" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+          <value>#{service_adminList}</value>
+        </parameter>
+        <parameter name="Comment" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+          <value>Hallo,  möchten Sie den folgenden User für den Chat freigeben:  UUID: #{userApplication.getAppuuid()} Firstname: #{userApplication.getUser().getFirstname()} Lastname:  #{userApplication.getUser().getLastname()}    Mfg </value>
+        </parameter>
+        <parameter name="Content" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+        <parameter name="Priority" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+        </parameter>
+        <parameter name="Skippable" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+          <value>false</value>
+        </parameter>
+        <parameter name="TaskName" >
+          <type name="org.drools.process.core.datatype.impl.type.StringDataType" />
+          <value>Anmeldung freigeben</value>
+        </parameter>
+      </work>
+      <mapping type="in" from="userApplication" to="Content" />
+      <mapping type="out" from="ActorId" to="service_actorId" />
+      <mapping type="out" from="result" to="userApplication" />
+      <mapping type="out" from="task_status" to="service_status" />
+      <onExit>
+        <action type="expression" dialect="java" >System.out.println("Exit Anmeldung freigeben: "+userApplication.getAppuuid()+"("+userApplication.getState()+")");</action>
+      </onExit>
+    </humanTask>
+  </nodes>
+
+  <connections>
+    <connection from="1" to="2" />
+    <connection from="5" to="4" />
+    <connection from="4" to="3" />
+    <connection from="2" to="5" />
+  </connections>
+
+</process>

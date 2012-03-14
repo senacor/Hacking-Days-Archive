@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Apache Wicket Quickstart</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <div class="subcolumns">
+                <div class="c20l">
+                    <div wicket:id="userDisplayPanel" />
+                </div>
+                <div class="c80r">
+                    <div style="margin:8px;">
+                        <div wicket:id="chatDisplayPanel" />
+                        <form wicket:id="chatForm" style="margin-top:5px;">
+                            <div style="float:left; min-width:700px; width:700px;">
+                                <input type="text" style="width:99%;" wicket:id="inputField" />
+                            </div>
+                            <div style="float:left;">
+                                <input type="submit" wicket:id="submitButton" />
+                            </div>
+                            <div style="clear:left;"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </wicket:panel>
+    </body>
+</html>

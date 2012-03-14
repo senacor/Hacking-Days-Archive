@@ -1,0 +1,45 @@
+- fields:
+    date_joined: 2011-04-09 12:05:05.156598
+    email: sb@sb.org
+    first_name: ''
+    groups: []
+    is_active: true
+    is_staff: true
+    is_superuser: true
+    last_login: 2011-04-09 12:35:31.348274
+    last_name: ''
+    password: sha1$429cc$947e5ce447e492db6f005372712139af8f9e9067
+    user_permissions: []
+    username: sbehnel
+  model: auth.user
+  pk: 1
+- fields:
+    date_joined: 2011-04-09 14:11:01.127454
+    email: fix@foxy.com
+    first_name: ''
+    groups: []
+    is_active: true
+    is_staff: false
+    is_superuser: false
+    last_login: 2011-04-09 14:11:01.127454
+    last_name: ''
+    password: sha1$b3a82$72c6d0b63b393349d832400e424b265268c236ae
+    user_permissions: []
+    username: Fix
+  model: auth.user
+  pk: 2
+- fields:
+    date_joined: 2011-04-09 14:11:51.795398
+    email: foxi@fix.com
+    first_name: ''
+    groups: []
+    is_active: true
+    is_staff: false
+    is_superuser: false
+    last_login: 2011-04-09 14:11:51.795398
+    last_name: ''
+    password: sha1$1e61e$11e1f4cb9de9201877d54fce1c5978879e4d1f04
+    user_permissions: []
+    username: Foxi
+  model: auth.user
+  pk: 3

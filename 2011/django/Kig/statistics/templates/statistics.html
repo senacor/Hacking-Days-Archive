@@ -1,0 +1,89 @@
+{% extends "main.html" %}
+
+{% block title %}Statistics{% endblock %}
+
+{% block content %}
+    <ul>
+        <li><a href="#msgstats">Message statistics</a></li>
+        <li><a href="#userstats">User statistics</a></li>
+        <li><a href="#topwords">Top words</a></li>
+    </ul>
+
+    <div class="msgstats">
+    <h2><a name="msgstats">Message statistics</a></h2>
+    {% for interval_length, msg_stats, url in dirty_list %}
+    <h3>{{ interval_length }} minute statistics</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Begin</td>
+                <td>Total message count</td>
+                <td>Blocked messages</td>
+                <td>Users</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stats in msg_stats %}
+                <tr>
+                    <td>{{ stats.interval_start_time }}</td>
+                    <td>{{ stats.message_count }}</td>
+                    <td>{{ stats.blocked_messages_count }}</td>
+                    <td>{{ stats.authors_count }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>
+    <img src="{{ url|safe }}" />
+    </p>
+    {% endfor %}
+    </div>
+
+    <div class="userstats">
+    <h2><a name="userstats">User statistics</a></h2>
+    {% for interval_length, user_stats in user_interval_stats %}
+    <h3>{{ interval_length }} minute statistics</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Begin</td>
+                <td>User name</td>
+                <td>Message count</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stats in user_stats %}
+                <tr>
+                    <td>{{ stats.interval_start_time }}</td>
+                    <td>{{ stats.author_login_name }}</td>
+                    <td>{{ stats.messages }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endfor %}
+    </div>
+
+    <div class="topwords">
+    <h2><a name="topwords">Top words</a></h2>
+    <table>
+        <thead>
+            <tr>
+                <td>Word</td>
+                <td>Count</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for word, count in top_words %}
+                <tr>
+                    <td>{{ word }}</td>
+                    <td>{{ count }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

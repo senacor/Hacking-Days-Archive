@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>{% block title %}Hier muss noch ein Title hin{% endblock title %}</title>
+<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+</head>
+<body>
+
+<h1>{% block headline %}Kig &mdash; Kim-yong Il Ged&auml;chtnischat{% endblock headline %}</h1>
+
+{% if user.is_authenticated %}
+    <div style="text-align:right">
+    <form action="/logout" method="GET">
+        <p>User {% if user.last_name %}{{ user.first_name }} {{ user.last_name }} ({{ user.username }}){% else %}{{ user.username }}{% endif %}
+            <button type="submit" value="logout">log out</button></p>
+    </form>
+    </div>
+{% endif %}
+
+{% if False %}Please enable Cookies!{% endif %}
+
+{% block content %}Toller content ohne Ende!{% endblock content%}
+
+{% block disclaimer %}Gehackt von den Hackern des Hacking Days 2011{% endblock disclaimer %}
+
+<p>
+<small>
+
+<p><strong>Log:</strong></p>
+
+<ul>
+{% block log %}
+    {% for line in log %}
+        <p>{{ line }}</p>
+    {% endfor %}
+{% endblock log %}
+</ul>
+
+</small>
+</p>
+</body>
+</html>

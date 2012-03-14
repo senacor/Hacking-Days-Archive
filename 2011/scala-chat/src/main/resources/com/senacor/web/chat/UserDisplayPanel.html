@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Apache Wicket Quickstart</title>
+    </head>
+    <body>
+    <wicket:panel>
+        <fieldset style="border-style:solid; border-color:#efefef; border-width:1px;">
+            <legend>Users</legend>
+            <div wicket:id="userRepeater" style="margin:5px;">
+                <a wicket:id="userLink">
+                    <span wicket:id="user"/>
+                </a>
+            </div>
+            <div style="margin-top:5px;">
+                <a wicket:id="seeAllMessagesLink">
+                    <span wicket:id="seeAllMessages"/>
+                </a>
+            </div>
+        </fieldset>
+    </wicket:panel>
+</body>
+</html>

@@ -1,0 +1,47 @@
+package rules
+
+import com.senacor.hd11.Birthday
+import com.senacor.hd11.Person
+
+
+
+
+rule "just log every person ..."
+when
+    $p : Person()
+then
+    System.out.println($p.getFirstName()+" "+$p.getLastName()+", "+$p.getAge());
+end
+
+
+rule "just log everything ..."
+when
+    $p : java.lang.String()
+then
+    System.out.println("dump: "+$p);
+end
+
+
+
+
+rule "is of valid age"
+when
+    $p : Person(age >= 18)
+then
+    $p.setValid(true);
+end
+
+
+
+
+rule "has birthday"
+when
+    $p : Person()
+    $b : Birthday(celebrated == false, person == $p)
+then
+    System.out.println($p.getFirstName()+" "+$p.getLastName()+" ... it's your birthday");
+    modify($b) {setCelebrated(true)}
+    modify($p) {incrementAge()}
+end
+
+

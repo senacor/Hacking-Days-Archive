@@ -1,0 +1,55 @@
+package rules
+
+import com.senacor.hd11.model.*
+import com.senacor.hd11.messages.*
+import function com.senacor.hd11.messages.Helper.containsBadWord
+
+
+rule "log every message"
+when
+    $m : Message()
+then
+    System.out.println("=====");
+    System.out.println($m.getUsername());
+    System.out.println($m.getMsguuid());
+    System.out.println($m.getText());
+    System.out.println("=====");
+
+    insert (new MsgCheck($m));
+end
+
+
+rule "contains bad word"
+when
+    $msg : Message(text matches ".*(bomb|sex|terror|freedom|democracy).*")
+    $nmsg : NiceMessage()
+then
+    $msg.setText($nmsg.getText());
+    insert (new Strike($msg.getUsername()));
+end
+
+
+rule "more than three warnings"
+when
+    $strikes : Strikes()
+    $msg : Message()
+    not MsgCheck(message == $msg)
+    $total : Number( intValue > $strikes.numberOfStrikes )
+             from accumulate(w: Strike(username == $msg.username), count(w))
+then
+    System.out.println("=====");
+    System.out.println("too much strikes for user '"+$msg.getUsername()+"' -> muted");
+    System.out.println("=====");
+    insert (new Mute($msg.getUsername()));
+end
+
+
+rule "auto-delete when muted"
+when
+    $msg  : Message()
+    $mute : Mute(username == $msg.username)
+then
+    $msg.setText("<sorry, user was muted>");
+end
+
+

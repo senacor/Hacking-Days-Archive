@@ -1,0 +1,19 @@
+table {
+    border: solid black 1px;
+}
+
+thead td {
+    font-weight: bold;
+    background-color: #d3d3d3;
+}
+
+td {
+    border: solid black 1px;
+    padding: 1ex;
+}
+
+div.topwords {
+    position:absolute;
+    top:1ex;
+    right:1ex;
+}

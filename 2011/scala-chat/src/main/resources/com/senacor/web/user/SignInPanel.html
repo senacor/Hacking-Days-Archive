@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>Your Page Title</title>
+        <!-- add your meta tags here -->
+        <link href="css/my_layout.css" rel="stylesheet" type="text/css" />
+        <!--[if lte IE 7]>
+        <link href="css/patches/patch_my_layout.css" rel="stylesheet" type="text/css" />
+        <![endif]-->
+    </head>
+    <body>
+    <wicket:panel>
+        <form wicket:id="loginForm">
+            <fieldset>
+                <legend>Login</legend>
+                <div class="type-text">
+                    <label for="firstname">UserName</label>
+                    <input type="text" wicket:id="username" />
+                </div>
+                <div class="type-text">
+                    <label for="firstname">Password</label>
+                    <input type="password" wicket:id="password" />
+                </div>
+                <div class="type-button">
+                    <input type="submit" wicket:id="button" value="Login"/>
+                </div>
+            </fieldset>
+
+        </form>
+    </wicket:panel>
+</body>
+</html>

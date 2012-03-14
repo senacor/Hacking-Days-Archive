@@ -1,0 +1,10 @@
+drools flow
+
+HumanTask, Parameters, Content
+http://community.jboss.org/thread/159483
+http://drools-drools-expert-drools-fusion-guvnor-drools-planner.46999.n3.nabble.com/DROOLS-FLOW-Accessing-the-Map-parameter-object-in-a-Java-constraint-evaluation-function-td713135.html
+http://www.packtpub.com/article/drools-jboss-rules-5.0-flow-part2
+http://drools.46999.n3.nabble.com/WorkItemNodeInstance-and-the-on-exit-action-td954464.html
+http://lists.jboss.org/pipermail/rules-users/2010-November/017288.html
+http://drools.46999.n3.nabble.com/Resuming-a-simple-process-involving-human-task-td716250.html
+http://community.jboss.org/message/598561
