@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Version: 1.0.0
+Bundle-Name: ScoringModule Plug-in
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: ScoringModule
+

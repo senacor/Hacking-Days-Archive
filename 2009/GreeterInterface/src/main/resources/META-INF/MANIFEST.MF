@@ -1,0 +1,5 @@
+Bundle-Version: 1.0
+Bundle-SymbolicName: senacor.hd.GreeterInterface
+Bundle-Name: GreeterInterface
+Export-Package: senacor.hd
+Bundle-ManifestVersion: 2

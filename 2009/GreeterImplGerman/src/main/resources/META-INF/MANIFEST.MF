@@ -1,0 +1,5 @@
+Bundle-Version: 1.0
+Bundle-SymbolicName: senacor.hd.GreeterImplGerman
+Bundle-Name: GreeterImplGerman
+Bundle-ManifestVersion: 2
+Import-Package: senacor.hd

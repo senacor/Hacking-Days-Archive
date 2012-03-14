@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+                           http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/osgi 
+                           http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+	<bean class="senacor.hd.sgh.infrastructure.BundleContextPostProcessor" />
+	<!-- bean class="senacor.hd.sharedservices.infrastructure.MyBeanPostProcessor" / -->
+
+	<context:component-scan base-package="senacor.hd.rest" />
+
+    <!-- resolvers -->
+    
+	<bean id="contentNegotiatingVR" class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver" p:order="#{T(org.springframework.core.Ordered).HIGHEST_PRECEDENCE}">
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<entry key="atom" value="application/atom+xml" />
+				<entry key="html" value="text/html" />
+			</map>
+		</property>
+	</bean>
+    
+    <bean id="jsonVR" class="senacor.hd.rest.JSONViewResolver" p:order="#{contentNegotiatingVR.order+1}"/>
+
+    <bean id="beanNameVR" class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="#{jsonVR.order+1}"/>
+	
+	<bean id="internalResourceVR" class="org.springframework.web.servlet.view.InternalResourceViewResolver"  p:order="#{beanNameVR.order+1}">
+    	<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+    <!-- resolvers:end -->
+    
+    <!-- views -->
+
+	<bean id="customerChanges.JSON" class="senacor.hd.rest.CustomerChangesView" />
+	<!-- bean id="customerChanges" class="com.springsource.samples.rest.SampleContentAtomView" / -->
+
+	<!-- vies:end -->
+	
+	<osgi:reference id="greeterService" interface="senacor.hd.GreeterService" timeout="10000" cardinality="0..1"/>
+
+	<bean name="/welcome.htm" class="senacor.hd.sharedservices.HelloWorldController">
+		<property name="greeterService" ref="greeterService" />
+	</bean>
+</beans>

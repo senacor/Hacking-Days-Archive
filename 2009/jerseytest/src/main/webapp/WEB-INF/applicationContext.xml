@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-2.5.xsd 
+                           http://www.springframework.org/schema/tx
+      					   http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/jee
+      					   http://www.springframework.org/schema/jee/spring-jee-2.0.xsd
+                           http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <!-- see http://forum.springsource.org/showthread.php?t=66216 
+             http://static.springsource.org/spring/docs/2.5.x/api/org/springframework/orm/jpa/support/PersistenceAnnotationBeanPostProcessor.html -->
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" >
+   		<property name="persistenceUnits">
+       		<map>
+           		<entry key="MyPU" value="persistence/hd"/>
+       		</map>
+   		</property>
+	</bean>
+
+    <!-- see http://static.springsource.org/spring/docs/2.5.x/api/org/springframework/transaction/jta/JtaTransactionManager.html -->
+	<tx:jta-transaction-manager/>
+	<!-- see http://static.springsource.org/spring/docs/2.5.x/reference/transaction.html -->
+	<tx:annotation-driven/>
+
+	<!-- DAOs -->
+
+	<bean id="customerDao" class="senacor.hd.rest.dao.CustomerDaoImpl" />
+
+	<!-- Jersey Resources -->
+
+	<bean class="senacor.hd.rest.customers.CustomersResource">
+		<property name="customerDao" ref="customerDao" />
+	</bean>
+
+	<bean class="senacor.hd.rest.customers.CustomerResource">
+		<property name="customerDao" ref="customerDao" />
+	</bean>
+
+	<bean class="senacor.hd.rest.orders.OrdersResource">
+		<property name="customerDao" ref="customerDao" />
+	</bean>
+
+	<bean class="senacor.hd.rest.orders.OrderResource">
+		<property name="customerDao" ref="customerDao" />
+	</bean>
+
+</beans>

@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>senacor.hd.poc</groupId>
+	<artifactId>ServiceRegistry</artifactId>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+	<name>ServiceRegistry Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>ServiceRegistry</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<!-- java.net (glassfish & co) -->
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>maven-repository.dev.java.net</id>
+			<name>Java.net Maven 1 Repository (legacy)</name>
+			<url>http://download.java.net/maven/1</url>
+			<layout>legacy</layout>
+		</repository>
+		<repository>
+			<id>glassfish-repository</id>
+			<name>Java.net Repository for Glassfish</name>
+			<url>http://download.java.net/maven/glassfish</url>
+		</repository>
+		<!-- springsource -->
+		<repository>
+			<id>com.springsource.repository.bundles.release</id>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/release</url>
+		</repository>
+		<repository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+		<!-- hackingdays -->
+		<repository>
+			<id>hackingdays</id>
+			<name>Hacking Days</name>
+			<url>http://podcast.senacor.com/nexus/content/repositories/hackingdays/</url>
+		</repository>
+		<repository>
+			<id>hackingsdays-snapshots</id>
+			<name>Hacking Days (snapshots)</name>
+			<url>http://podcast.senacor.com/nexus/content/repositories/hackingsdays-snapshots</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>hackingdays</id>
+			<name>Hacking Days</name>
+			<url>http://podcast.senacor.com/nexus/content/repositories/hackingdays/</url>
+		</repository>
+		<snapshotRepository>
+			<id>hackingsdays-snapshots</id>
+			<name>Hacking Days (snapshots)</name>
+			<url>http://podcast.senacor.com/nexus/content/repositories/hackingsdays-snapshots</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+	<bean class="senacor.hd.mw.artworks.osgihelper.BundleContextPostProcessor" />
+
+	
+	<osgi:reference id="messagingServiceOsgi" interface="senacor.hd.bdl.messaging.MessagingService" timeout="10000" cardinality="0..1"/>
+
+	<bean name="artworkResource" class="senacor.hd.mw.artworks.resources.ArtworkResource">
+		<property name="messagingService" ref="messagingServiceOsgi"></property>
+	</bean>
+	<bean name="artworksResource" class="senacor.hd.mw.artworks.resources.ArtworksResource">
+		<property name="messagingService" ref="messagingServiceOsgi"></property>
+	</bean>
+
+</beans>

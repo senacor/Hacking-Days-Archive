@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf540
+{\fonttbl\f0\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;}
+{\info
+{\keywords cursorLocation=1199, fitsPagesWidth=1, headerFooter=0style=4startPage=1}}\paperw11900\paperh16840\margl1008\margr1008\margt1008\vieww15520\viewh15480\viewkind1\viewscale125
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl360\slmult1\ql\qnatural\pardirnatural
+
+\f0\b\fs44 \cf0 kujau24.com\
+
+\b0\fs26 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl360\slmult1\qj\pardirnatural
+
+\i \cf0 \'93Mama, mach Dir doch keine Sorgen! Wir machen ja nicht nur in Banken, sondern auch in Autos.\'94\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl360\slmult1\ql\qnatural\pardirnatural
+
+\i0\fs18 \cf0 ungenannter Kollege, 2009\
+
+\fs26 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl360\slmult1\qj\pardirnatural
+\cf0 Auch wenn die aktuelle Krise hoffentlich schon hinter uns liegen sollte, so sollte man meiner Meinung nach trotzdem immer einen \'93Plan B\'94 zur Hand haben. Im Rahmen der Hacking Days werden wir deshalb bem\'fchen, eine Internetplattform f\'fcr Kunstf\'e4lscher mit integriertem Auktionshaus zu realisieren. Eine typische Win-Win-Win-Situation ... in der Baisse legen \'c4stheten vermehrt Wert auf g\'fcnstige Kunstwerke, die F\'e4lscher freuen sich \'fcber professionelles Management der Auftr\'e4ge und wir uns \'fcber die Provisionen.\
+\
+Die L\'f6sung wird auf REST, OSGi und Eclipse RCP/Wicket basieren. Innerhalb dieses technischen Rahmens werden wir versuchen, bestehende Anwendungen zu integrieren: Twitter, Google Calendar, Google Contacts, Flicker, Amazon Simple DB, Amazon Messaging. Und auch wenn \'93premature optimization the root of all evil\'94 sein sollte - wir werden trotzdem von Anfang versuchen, eine m\'f6glichst skalierbare und belastbare Anwendung zu erschaffen. Hierzu werden wir in unserer Infrastruktur neben einem Glassfish V3 Application Server zentral einen Squid Proxy aufsetzen.\page Middleware\
+\
+Mehrere WARs:\
+	- AuktionsMgr\
+	- ObjektMgr\
+	- FaelschungsMgr\
+	- kujau24 Einsprungseite\
+\
+\
+Frontend\
+\
+Mehrere Anwendungen:\
+	- Eclipse RCP\
+	- Wicket\
+\
+\
+Daten\
+	- Amazon SimpleDB\
+	- Google Contacts\
+	- Google Calendar\
+	- Flickr\
+\
+Datenaustausch\
+	- Twitter (API Begrenzung?)\
+	- Amazon Messaging (Preis?)\
+\
+\page ObjektMgr\
+	- Eingabe der Objektdaten\
+	- Verkn\'fcpfung mit Flickr-Bild\
+	- Anzeige aller Daten\
+		- gefiltert nach xy\page FaelschungsMgr\
+	- Neuanlage F\'e4lscher\
+	- Rating F\'e4lscher\
+	- Reporting F\'e4lschungen f\'fcr F\'e4lscher mit Ratings / Comments\
+	- Reporting Auftr\'e4ge\
+		- alte Auftr\'e4ge mit Cache forever\
+	- F\'e4lscher Matching (OSGi-Modul)\
+	- Twitter-Feed\
+		- F\'e4lscher allgemein (neue F\'e4lscher, etc.)\
+		- Pro F\'e4lscher (Status-Fortschritt)\
+		- Auftr\'e4ge Status & Eingang\
+\page Tooling / Bibliotheken\
+\
+Atom/AtomPub\
+	- Rome\
+\
+REST\
+	- Jersey\
+	- Spring MVC\
+\
+Web-Frontend\
+	- Wicket (REST-Inspired?)\
+}

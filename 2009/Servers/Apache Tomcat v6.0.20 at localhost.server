@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Apache Tomcat v6.0.20 at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Apache Tomcat v6.0.20 at localhost" name="Apache Tomcat v6.0.20 at localhost" runtime-id="Apache Tomcat v6.0.20" server-type="org.eclipse.jst.server.tomcat.60" server-type-id="org.eclipse.jst.server.tomcat.60" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="12">
+  <list key="modules" value0="tomcat-embedded-felix::org.eclipse.jst.jee.server:tomcat-embedded-felix::jst.web::2.5"/>
+</server>
