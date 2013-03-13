@@ -1,0 +1,12 @@
+{
+    "name":         "node-twitter",
+    "version":      "0.0.1",
+    "engine":       "node >= 0.6.x",
+    "dependencies": {
+      "mocha": "0.6.x",
+      "should": "0.6.x",
+      "connect": "1.8.x",
+      "socket.io": "0.9.x",
+      "socket.io-client": "0.9.x"
+    }
+}

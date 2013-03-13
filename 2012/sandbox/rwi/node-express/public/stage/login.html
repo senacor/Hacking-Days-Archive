@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+		Senacor NetWork
+        </title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+        <link rel="stylesheet" href="my.css" />
+        <link rel="stylesheet" href="stylesheets/themes/senacor.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />
+
+        <style>
+            /* App custom styles */
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <script src="jq-templating.js"></script>
+        <script src="jq-urlparser.js"></script>
+    </head>
+    <body>
+        <!-- Home -->
+        <div data-role="page" id="login" data-theme="b">
+            <script>
+                var username;
+                
+                function readParam() {
+                    $(document).unbind('pageshow', readParam);
+                    
+                    username = $.url(window.location.href).param('user');
+                    
+                    if (typeof(username) != 'undefined' && username !== "") {
+                        alert(">"+username+"<");
+                        $('#username').val(username);
+                        readUserdata();
+                    }
+                    
+                    // alert("user:"+username+"url: "+window.location.search);
+                }
+                                                
+                $(document).bind('pageshow', readParam); 
+            </script>
+
+            <div data-role="content" style="padding: 15px">
+                <div style="display: inline text-align:center">
+                    <img src="http://www.senacor.com/senacor_logo.png" />
+                </div>
+                <h1>
+                    NetWork
+                </h1>
+                <h3>
+                    Login to your NetWork
+                </h3>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="username">
+                            Username
+                        </label>
+                        <input id="username" placeholder="your username" value="backdoor" type="text" />
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="password">
+                            Password
+                        </label>
+                        <input id="password" placeholder="your password" value="" type="text" />
+                    </fieldset>
+                </div>
+                <a id="buttonlogin" data-role="button" data-inline="true" data-transition="fade">
+                    Login
+                </a>
+                <a id="buttoncreate" data-role="button" data-inline="true" data-transition="fade">
+                    Create Account
+                </a>
+
+            </div>
+        </div>
+        
+        <div data-role="page" id="profile" data-theme="c">
+	    <div data-role="content" style="padding: 15px">
+                <div data-role="header" data-id="foo1" data-position="fixed" data-theme="c">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#profile" data-theme="" data-icon="" class="ui-btn-active ui-state-persist"> Profile </a></li>
+                            <li><a href="#connect" data-theme="" data-icon=""> Connect </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="usernamelabel"><strong>Username</strong></label>
+                        <input id="usernamelabel" value="" type="text" disabled="disabled" readonly="readonly"/>
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="lastname"><strong>Lastname</strong></label>
+                        <input id="lastname" placeholder="your lastname" value="" type="text" />
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="firstname"><strong>Firstname</strong></label>
+                        <input id="firstname" placeholder="your firstname" value="" type="text" />
+                    </fieldset>
+                </div>
+                <a id="editSaveButton" data-role="button" data-inline="true" mode="EDIT"> <span id="editSaveCaption">Edit</span></a> <!-- mode=EDIT -> input fields are readonly; mode=SAVE -> input fields are writable -->
+	    </div>
+    
+            <div data-role="footer" data-position="fixed" data-theme="c">
+                <a data-role="button" data-transition="flip" href="javascript:switchToGraph('profile')"> Show Connections </a>
+            </div>
+        </div>
+	
+        <!-- connect page -->
+        <div data-role="page" id="connect" data-theme="c">
+            <div data-role="content" style="padding: 15px">
+                <div data-role="header" data-id="foo1" data-position="fixed" data-theme="c">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#profile" data-theme="" data-icon=""> Profile </a></li>
+                            <li><a href="#connect" data-theme="" data-icon="" class="ui-btn-active ui-state-persist"> Connect </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <select name="nodeSelector" id="nodeSelector" class="nodeSelector">
+                        <option value="subject">Themen laden ...</option>
+                        <option value="person">Personen laden ...</option>
+                        <option value="location">Orte laden ...</option>
+                    </select>
+                </div>
+
+                <div data-role="fieldcontain">
+                    <ul data-role="listview" data-theme="b" data-filter="true" class="personList">
+                        <div class="empty list">Daten noch nicht geladen</div>
+                    </ul>
+                </div>
+            </div>
+            
+                <div data-role="footer" data-position="fixed" data-theme="c">
+                    <a data-role="button" data-transition="flip" href="javascript:switchToGraph('connect')"> Show Connections </a>
+                </div>
+            </div>
+        </div>
+        
+	<!-- error page -->
+        <div data-role="error" data-rel="dialog" id="error">
+            <div data-role="content" style="padding: 15px">
+                <div class="errorMsg"></div>
+                <a href="#" data-rel="back" data-role="button" data-icon="delete">schlie&szlig;en</a>
+            </div>
+        </div>
+	<!-- success page -->
+        <div data-role="success" data-rel="dialog" id="success">
+            <div data-role="content" style="padding: 15px">
+                <div class="successMsg"></div>
+                <a href="#" data-rel="back" data-role="button" data-icon="delete">schlie&szlig;en</a>
+            </div>
+        </div>	
+        
+        <script id="personTmpl" type="text/x-jquery-tmpl">
+            <li>
+                <a href="javascript:addPerson('${username}')"><img src="${iconLink}" class="ui-li-thumb"/>${username}</a>
+                <div class="ui-li-count">${numFollowers}</div>
+            </li>
+        </script>
+
+        <script>
+            function switchToGraph(anchor) {
+                window.location.href="graph.html?anchor="+anchor+"&user="+username;
+                // geht nicht, da ajax ... $.mobile.changePage( "graph.html", { transition: "flip", data:{anchor:anchor, username:username}} );
+            }
+	    
+            function showErrorDialog(msg) {
+                $("div.errorMsg").text(msg);
+                $.mobile.changePage("#error", {role: 'dialog'});   
+            }
+
+            function showSuccessDialog(msg) {
+                $("div.successMsg").text(msg);
+                $.mobile.changePage("#success", {role: 'dialog'});   
+            }
+
+	    $("#buttonlogin").bind("click", readUserdata);
+            
+            function readUserdata(event) {
+                username = $('#username').val();
+                apiUrl = "/rest/person/"+username;
+                
+                if (username === "backdoor") {
+                    $.mobile.changePage("#profile");
+                    return;
+                }
+                
+                // alert("user: "+username+" / URL: "+apiUrl);
+
+                jQuery.getJSON(apiUrl)
+                .success(function(userdata) {
+                    //alert("userdata:" + userdata.username);
+		    
+		    initprofilefields(userdata);
+		    
+		    $.mobile.changePage("#profile");
+                })
+                .error(function (xhr, ajaxOptions, thrownError) {
+                    if (xhr.status == 404) {
+                        showErrorDialog("User nicht vorhanden");
+                    } else {
+                        showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")" + "[" + thrownError + "]");
+                    }
+                });    
+            }
+            
+	    $("#buttoncreate").bind("click", function(event) {
+                username = $('#username').val();
+                apiUrl = "/rest/person/"+username;
+                
+                var payload = {"firstname":"dummy","lastname":"dummy","username":username};
+                
+                // alert("user: "+username+" / URL: "+apiUrl+" / payload: "+JSON.stringify(payload));
+
+		jQuery.ajax({
+			type : "PUT",
+			url : apiUrl,
+			data : JSON.stringify(payload),
+			contentType: "application/json",
+			dataType: "json"
+		})		
+                .success(function() {
+                    //		    var user = jQuery.parseJSON(userdata);
+		    initprofilefields(userdata);
+		    
+		    $.mobile.changePage("#profile");
+                })
+                .error(function (xhr, ajaxOptions, thrownError) {
+                    user = null;
+                    showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+                });    
+            });
+            
+            $("#nodeSelector").bind("change", function(event, ui) {
+                selectedVal = $(this).val();
+            
+                if (selectedVal == "person") {
+                    loadPersons();
+                } else {
+                    showErrorDialog("not implemented");
+                }
+            });
+            
+            function addPerson(peername) {
+                apiUrl = "/rest/person/"+username+"/peers/"+peername;
+                // alert("json put "+apiUrl);
+                
+		jQuery.ajax({
+			type : "PUT",
+			url : apiUrl
+		})		
+                .complete(function(xhr) {
+		    if (xhr.status == 200) {
+			showSuccessDialog("Prima, Du kennst nun "+peername);
+		    } else {
+			showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+		    }
+                })
+                .success(function() {
+                    showSuccessDialog("Du kennst nun "+peername);
+                })
+                .error(function (xhr, ajaxOptions, thrownError) {
+                    showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+                });    
+            }
+            
+            function loadPersons() {
+                $.mobile.showPageLoadingMsg("b", "Lade Personendaten vom Server ...", true);
+                                
+                apiUrl = "/rest/person/topTen";
+                jQuery.ajax({
+			type : "GET",
+			url : apiUrl
+		})		
+                .success(function(data) {
+                    personList = $("#connect").find(".personList" );
+                    personList.empty();
+
+                    personData = [
+                        {"username":"rwi", "numFollowers":11},
+                        {"iconLink":"http://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Gnome-stock_person.svg/380px-Gnome-stock_person.svg.png", "username":"hst", "numFollowers":7},
+                        {"username":"ake", "numFollowers":9},
+                        {"iconLink":"http://icons16x16.com/folders/People/5_9_2.gif", "username":"spe", "numFollowers":17}
+                    ];
+                    
+                    $("#personTmpl").tmpl(personData).appendTo(".personList");
+                    
+                    personList.listview( "refresh" );
+                })
+                .error(function (xhr, ajaxOptions, thrownError) {
+                    if (xhr.status == 404) {
+                        personList = $("#connect").find(".personList" );
+                        personList.empty();
+    
+                        personData = [
+                            {"username":"rwi", "numFollowers":11},
+                            {"iconLink":"http://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Gnome-stock_person.svg/380px-Gnome-stock_person.svg.png", "username":"hst", "numFollowers":7},
+                            {"username":"ake", "numFollowers":9},
+                            {"iconLink":"http://icons16x16.com/folders/People/5_9_2.gif", "username":"spe", "numFollowers":17}
+                        ];
+                        
+                        $("#personTmpl").tmpl(personData).appendTo(".personList");
+                        
+                        personList.listview( "refresh" );
+                    } else {
+                        showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+                    }
+                });
+                
+                $.mobile.hidePageLoadingMsg();
+            };
+
+	    $("#editSaveButton").bind("click", function(event) {
+		alert("button pressed; mode=" + $("#editSaveButton").attr("mode"));
+		
+		// save
+		if ($("#editSaveButton").attr("mode") === 'SAVE') {
+		    alert("saving");
+		    
+		    var payload = {
+			"firstname" : $("#firstname").val(),
+			"lastname" : $("#lastname").val(),
+			"username" : $("#usernamelabel").val()
+		    };
+
+		    alert("payload: " + JSON.stringify(payload));
+		    
+		    jQuery.ajax({
+			type : "PUT",
+			url : "/rest/person/" + payload.username,
+			data : JSON.stringify(payload),
+			contentType: "application/json",
+			dataType: "json"
+		    })		
+		    .success(function(postresponsedata) {
+			toggleEditSaveButton();
+			configureFirstLastNameFields($("#editSaveButton").attr("mode"));
+			
+			//$.mobile.changePage("#profile");
+		    })
+		    .error(function (xhr, ajaxOptions, thrownError) {
+			showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+		    });    
+		    
+		} else {
+		    toggleEditSaveButton();
+		    configureFirstLastNameFields($("#editSaveButton").attr("mode"));
+		}
+	    });
+	    
+	    
+	    function toggleEditSaveButton() {
+		$("#editSaveButton").attr("mode", $("#editSaveButton").attr("mode") === 'EDIT' ? 'SAVE' : 'EDIT');
+		$("#editSaveCaption").text($("#editSaveButton").attr("mode") === 'EDIT' ? 'Edit' : 'Save');
+	    }
+	    
+	    function configureFirstLastNameFields(mode) {
+		$("#lastname").prop('disabled', mode === 'EDIT');
+		$("#firstname").prop('disabled', mode === 'EDIT');
+	    }
+	    
+	    
+	    if($("#username").val() != '' && $("#username").val() != 'backdoor') {
+		configureFirstLastNameFields($("#editSaveButton").attr("mode"));
+
+		//var userdata = '{' + 
+		//'    "username" : "hstamminger", ' + 
+		//'    "lastname" : "Stamminger", ' +
+		//'    "firstname" : "Henning" ' +
+		//'}';
+	    
+                jQuery.getJSON("/rest/person/" + $("#username").val())
+                .success(function(userdata) {
+		    var parsedUserData = jQuery.parseJSON(userdata);
+		    
+		    alert("data: " + parsedUserData);
+		    
+		    $("#usernamelabel").val(parsedUserData.username);
+		    $("#lastname").val(parsedUserData.lastname);
+		    $("#firstname").val(parsedUserData.firstname);
+    		})
+		.error(function(xhr, ajaxOptions, thrownError) {
+		    alert("error: " + thrownError + "; status: " + xhr.status + "; statusText: " + xhr.statusText)
+		});
+    	    }
+	    
+        </script>
+    </body>
+</html>

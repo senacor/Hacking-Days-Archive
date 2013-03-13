@@ -1,0 +1,632 @@
+{"id":"3","name":"Aalen","location":[10.0962166, 48.8413802]}
+{"id":"4","name":"Aulendorf","location":[9.6439149, 47.9530095]}
+{"id":"5","name":"Baden-Baden","location":[8.190876, 48.7902988]}
+{"id":"6","name":"Biberach(Riß)","location":[9.79282343261649, 48.1017774082195]}
+{"id":"7","name":"Bruchsal","location":[8.5897148, 49.1244319]}
+{"id":"8","name":"Crailsheim","location":[10.0639049, 49.1382706]}
+{"id":"9","name":"Donaueschingen","location":[8.4989884, 47.9481011]}
+{"id":"10","name":"Ellwangen","location":[10.1299037, 48.9640723]}
+{"id":"11","name":"Freiburg(Breisgau) Hbf","location":[7.84254739833522, 47.9984201295915]}
+{"id":"12","name":"Friedrichshafen Stadt","location":[9.4736784, 47.6531797]}
+{"id":"13","name":"Geislingen(Steige)","location":[9.8419389, 48.619215]}
+{"id":"14","name":"Göppingen","location":[9.6524159, 48.6999423]}
+{"id":"15","name":"Hausach","location":[8.1814414, 48.2849813]}
+{"id":"16","name":"Heidelberg Hbf","location":[8.6751265, 49.4040273]}
+{"id":"17","name":"Horb","location":[8.6880314, 48.4413102]}
+{"id":"18","name":"Hornberg(Schwarzw)","location":[8.2332656, 48.2117956]}
+{"id":"19","name":"Karlsruhe Hbf","location":[8.4022717, 48.9936199]}
+{"id":"20","name":"Karlsruhe-Durlach","location":[8.4623637, 49.0021652]}
+{"id":"21","name":"Kehl","location":[7.80597015227142, 48.5770437009051]}
+{"id":"22","name":"Konstanz","location":[9.1772175, 47.6588689]}
+{"id":"23","name":"Mannheim Hbf","location":[8.46952, 49.4793022]}
+{"id":"24","name":"Metzingen(Württ)","location":[9.2900636, 48.5397147]}
+{"id":"25","name":"Mühlacker","location":[8.8461693, 48.9531181]}
+{"id":"26","name":"Nürtingen","location":[9.34277, 48.6282031]}
+{"id":"27","name":"Offenburg","location":[7.9454623, 48.4758938]}
+{"id":"28","name":"Pforzheim Hbf","location":[8.7031273, 48.8940491]}
+{"id":"29","name":"Plochingen","location":[9.4116312, 48.7130128]}
+{"id":"30","name":"Radolfzell","location":[8.9692321, 47.7357351]}
+{"id":"31","name":"Ravensburg","location":[9.6064095348496, 47.7845039917761]}
+{"id":"32","name":"Reutlingen Hbf","location":[9.209415, 48.4962967]}
+{"id":"33","name":"Rottweil","location":[8.6398289, 48.1654303]}
+{"id":"34","name":"Schorndorf","location":[9.5268718, 48.807311]}
+{"id":"35","name":"Schwäbisch Gmünd","location":[9.7881393, 48.8011264]}
+{"id":"36","name":"Singen(Hohentwiel)","location":[8.8408742, 47.7591369]}
+{"id":"37","name":"Stuttgart Hbf","location":[9.181704, 48.7837337]}
+{"id":"38","name":"Triberg","location":[8.2368837, 48.1403732]}
+{"id":"39","name":"Tübingen Hbf","location":[9.0553017, 48.5157321]}
+{"id":"40","name":"Tuttlingen","location":[8.7985449, 47.9805401]}
+{"id":"41","name":"Ulm Hbf","location":[9.9829197, 48.3993099]}
+{"id":"42","name":"Vaihingen(Enz)","location":[8.9582846, 48.9476538]}
+{"id":"43","name":"Villingen(Schwarzw)","location":[8.4654926, 48.0578374]}
+{"id":"44","name":"Weinheim(Bergstr)","location":[8.6652748, 49.5534318]}
+{"id":"45","name":"Wiesloch-Walldorf","location":[8.6642999, 49.2911628]}
+{"id":"46","name":"Ansbach","location":[10.5777279, 49.2980319]}
+{"id":"47","name":"Augsburg Hbf","location":[10.8863554, 48.3655303]}
+{"id":"48","name":"Berchtesgaden Hbf","location":[12.9991549, 47.6263918]}
+{"id":"49","name":"Buchloe","location":[10.7160299, 48.0332946]}
+{"id":"50","name":"Donauwörth","location":[10.7710598, 48.7146398]}
+{"id":"51","name":"Fischen","location":[10.2716795, 47.4570167]}
+{"id":"52","name":"Freilassing","location":[12.9772728, 47.8368345]}
+{"id":"53","name":"Fürth(Bay)Hbf","location":[10.9900384, 49.4695646]}
+{"id":"54","name":"Steinach(b Rothenb)","location":[10.2734045, 49.4532322]}
+{"id":"55","name":"Günzburg","location":[10.2793048, 48.4605958]}
+{"id":"56","name":"Gunzenhausen","location":[10.7551984, 49.1203691]}
+{"id":"57","name":"Immenstadt","location":[10.2136804, 47.5591782]}
+{"id":"58","name":"Kaufbeuren","location":[10.6297629, 47.8756167]}
+{"id":"59","name":"Kempten(Allgäu)Hbf","location":[10.3174761, 47.7118578]}
+{"id":"60","name":"Lindau Hbf","location":[9.6802923, 47.5443074]}
+{"id":"61","name":"Memmingen","location":[10.1870489, 47.9856107]}
+{"id":"62","name":"München Hbf","location":[11.5572783, 48.1406845]}
+{"id":"63","name":"München Ost","location":[11.6043054148054, 48.1277276876566]}
+{"id":"64","name":"München-Pasing","location":[11.4323862, 48.1630858]}
+{"id":"65","name":"Neumarkt(Oberpf)","location":[11.4569733, 49.2732539]}
+{"id":"66","name":"Nürnberg Hbf","location":[11.0823925, 49.445319]}
+{"id":"67","name":"Oberstdorf","location":[10.2777094848623, 47.4108789467668]}
+{"id":"68","name":"Passau Hbf","location":[13.4508167, 48.5740553]}
+{"id":"69","name":"Plattling","location":[12.8643345, 48.7795391]}
+{"id":"70","name":"Regensburg Hbf","location":[12.0994961342739, 49.0121919195729]}
+{"id":"71","name":"Rosenheim","location":[12.1193527, 47.8500255]}
+{"id":"72","name":"Sonthofen","location":[10.2721331, 47.5132649]}
+{"id":"73","name":"Traunstein","location":[12.6384948, 47.8684564]}
+{"id":"74","name":"Würzburg Hbf","location":[9.9364098, 49.8020529]}
+{"id":"75","name":"Angermünde","location":[13.9964094, 53.0157111]}
+{"id":"76","name":"Berlin Hbf","location":[13.3696217, 52.5249767]}
+{"id":"77","name":"Berlin Ostbahnhof","location":[13.4350985, 52.5103979]}
+{"id":"78","name":"Berlin Gesundbrunnen","location":[13.3902169, 52.5486453]}
+{"id":"79","name":"Berlin-Spandau","location":[13.1952482, 52.5348039]}
+{"id":"80","name":"Berlin Südkreuz","location":[13.365581, 52.4754681]}
+{"id":"81","name":"Berlin Wannsee","location":[13.1798007, 52.4210613]}
+{"id":"82","name":"Bernau(bei Berlin)","location":[13.5922258, 52.6754142]}
+{"id":"83","name":"Brandenburg Hbf","location":[12.5666743, 52.4007122]}
+{"id":"84","name":"Cottbus","location":[14.3245808563886, 51.750727216195]}
+{"id":"85","name":"Eberswalde Hbf","location":[13.7972186, 52.834089]}
+{"id":"86","name":"Elsterwerda","location":[13.5168346548355, 51.4600316203877]}
+{"id":"87","name":"Forst(Lausitz)","location":[14.6373182, 51.7389469]}
+{"id":"88","name":"Frankfurt(Oder)","location":[14.5469106, 52.3365124]}
+{"id":"89","name":"Lübben(Spreewald)","location":[13.8774652, 51.9395968]}
+{"id":"90","name":"Lübbenau(Spreewald)","location":[13.9612584, 51.8620204]}
+{"id":"91","name":"Potsdam Hbf","location":[13.0670605, 52.3915324]}
+{"id":"92","name":"Prenzlau","location":[13.8664892, 53.3215617]}
+{"id":"93","name":"Wittenberge","location":[11.7630785, 53.0029434]}
+{"id":"94","name":"Bad Nauheim","location":[8.749085, 50.3678544]}
+{"id":"95","name":"Bebra","location":[9.7982159, 50.9689967]}
+{"id":"96","name":"Bensheim","location":[8.6167193, 49.6813974]}
+{"id":"97","name":"Darmstadt Hbf","location":[8.6301891, 49.8725698]}
+{"id":"98","name":"Dillenburg","location":[8.2945913, 50.7348406]}
+{"id":"99","name":"Heppenheim(Bergstr)","location":[8.6333535, 49.6415486]}
+{"id":"100","name":"Herborn(Dillkr)","location":[8.3079305, 50.6845361]}
+{"id":"101","name":"Frankfurt(Main)Hbf","location":[8.6635392, 50.1070086]}
+{"id":"102","name":"Frankfurt(M) Flughafen","location":[8.5861275, 50.0539142]}
+{"id":"103","name":"Frankfurt(Main)Süd","location":[8.68590331531608, 50.0996379821886]}
+{"id":"104","name":"Friedberg(Hess)","location":[8.7611478, 50.3326667]}
+{"id":"105","name":"Fulda","location":[9.6843018, 50.5547224]}
+{"id":"106","name":"Gießen","location":[8.66321794822341, 50.5795129177068]}
+{"id":"107","name":"Hanau Hbf","location":[8.9292194, 50.1211644]}
+{"id":"108","name":"Kassel-Wilhelmshöhe","location":[9.4469729, 51.3125472]}
+{"id":"109","name":"Marburg(Lahn)","location":[8.7750078, 50.8193361]}
+{"id":"110","name":"Treysa","location":[9.1857184, 50.9105882]}
+{"id":"111","name":"Wabern(Bz Kassel)","location":[9.3578393, 51.1029759]}
+{"id":"112","name":"Wetzlar","location":[8.5035789, 50.5654571]}
+{"id":"113","name":"Wiesbaden Hbf","location":[8.24398675204415, 50.0700534428664]}
+{"id":"114","name":"Anklam","location":[13.7018456, 53.8560382]}
+{"id":"115","name":"Bad Kleinen","location":[11.4660251, 53.7665236]}
+{"id":"116","name":"Bergen auf Rügen","location":[13.4182876, 54.4207549]}
+{"id":"117","name":"Ostseebad Binz","location":[13.5998702, 54.4056416]}
+{"id":"118","name":"Bützow","location":[11.9982487, 53.8370774]}
+{"id":"119","name":"Greifswald","location":[13.3702629, 54.0929282]}
+{"id":"120","name":"Seebad Heringsdorf","location":[14.129437, 53.9642261]}
+{"id":"121","name":"Ludwigslust","location":[11.4938868, 53.3349346]}
+{"id":"122","name":"Pasewalk","location":[13.98939461023, 53.5152202974342]}
+{"id":"123","name":"Ribnitz-Damgarten West","location":[12.4372339, 54.2391881]}
+{"id":"124","name":"Rostock Hbf","location":[12.1307995, 54.0782205]}
+{"id":"125","name":"Warnemünde","location":[12.0907438, 54.1771273]}
+{"id":"126","name":"Schwerin Hbf","location":[11.4075055, 53.6350813]}
+{"id":"127","name":"Stralsund Hbf","location":[13.0784738, 54.3078815]}
+{"id":"128","name":"Velgast","location":[12.8026434, 54.2774916]}
+{"id":"129","name":"Zinnowitz","location":[13.9028929, 54.0757568]}
+{"id":"130","name":"Züssow","location":[13.5495928, 53.972905]}
+{"id":"131","name":"Alfeld(Leine)","location":[9.8175354, 51.9815743]}
+{"id":"132","name":"Augustfehn","location":[7.7592445, 53.2208983]}
+{"id":"133","name":"Bad Bentheim","location":[7.1581827, 52.3098764]}
+{"id":"134","name":"Bad Zwischenahn","location":[8.0037469, 53.1824909]}
+{"id":"135","name":"Braunschweig Hbf","location":[10.5402099, 52.2524667]}
+{"id":"136","name":"Bremen Hbf","location":[8.813619, 53.0831854]}
+{"id":"137","name":"Celle","location":[10.0624947, 52.6209464]}
+{"id":"138","name":"Delmenhorst","location":[8.63607535, 53.05203785]}
+{"id":"139","name":"Diepholz","location":[8.3803965, 52.6049834]}
+{"id":"140","name":"Emden Hbf","location":[7.1950081, 53.3691567]}
+{"id":"141","name":"Emden Außenhafen","location":[7.1862013, 53.3444416]}
+{"id":"142","name":"Göttingen","location":[9.9262864, 51.5367866]}
+{"id":"143","name":"Hannover Hbf","location":[9.7417874, 52.3770643]}
+{"id":"144","name":"Helmstedt","location":[11.0105214, 52.2220847]}
+{"id":"145","name":"Kreiensen","location":[9.9678113, 51.851615]}
+{"id":"146","name":"Leer(Ostfriesl)","location":[7.4652172, 53.2314972]}
+{"id":"147","name":"Lingen(Ems)","location":[7.3217063, 52.5200777]}
+{"id":"148","name":"Meppen","location":[7.2976521, 52.6963147]}
+{"id":"149","name":"Nienburg(Weser)","location":[9.2179526, 52.645295]}
+{"id":"150","name":"Norden","location":[7.2184538, 53.5883777]}
+{"id":"151","name":"Norddeich","location":[7.1608448, 53.6215737]}
+{"id":"152","name":"Norddeich Mole","location":[7.1587556, 53.6242624]}
+{"id":"153","name":"Northeim(Han)","location":[9.9862362, 51.7033102]}
+{"id":"154","name":"Oldenburg(Oldb)","location":[8.2225446, 53.1437084]}
+{"id":"155","name":"Osnabrück Hbf","location":[8.0616697, 52.2728147]}
+{"id":"156","name":"Papenburg(Ems)","location":[7.3870977, 53.0900063]}
+{"id":"157","name":"Peine","location":[10.2315845, 52.3189381]}
+{"id":"158","name":"Verden(Aller)","location":[9.2377859, 52.9206176]}
+{"id":"159","name":"Westerstede-Ocholt","location":[7.8868008, 53.2022242]}
+{"id":"160","name":"Wolfsburg Hbf","location":[10.7871326, 52.4294624]}
+{"id":"161","name":"Aachen Hbf","location":[6.09143725789839, 50.7677512703889]}
+{"id":"162","name":"Altenbeken","location":[8.9428501, 51.7666798]}
+{"id":"163","name":"Bad Oeynhausen","location":[8.7962546, 52.2053157]}
+{"id":"164","name":"Bielefeld Hbf","location":[8.5327567, 52.0292292]}
+{"id":"165","name":"Bochum Hbf","location":[7.2228723, 51.4786209]}
+{"id":"166","name":"Bonn Hbf","location":[7.0969903, 50.7321107]}
+{"id":"167","name":"Bünde(Westf)","location":[8.5741773, 52.2021593]}
+{"id":"168","name":"Dortmund Hbf","location":[7.4591988, 51.5176096]}
+{"id":"169","name":"Duisburg Hbf","location":[6.7760502, 51.4296846]}
+{"id":"170","name":"Düren","location":[6.482321, 50.8095408]}
+{"id":"171","name":"Düsseldorf Hbf","location":[6.7936142, 51.2202372]}
+{"id":"172","name":"Düsseldorf Flughafen","location":[6.7868101, 51.2917139]}
+{"id":"173","name":"Essen Hbf","location":[7.0146165, 51.4514143]}
+{"id":"174","name":"Gelsenkirchen Hbf","location":[7.1025113, 51.5046549]}
+{"id":"175","name":"Gütersloh Hbf","location":[8.3849376, 51.906837]}
+{"id":"176","name":"Hagen Hbf","location":[7.46167111696158, 51.3626284235092]}
+{"id":"177","name":"Hamm(Westf)","location":[7.8078312, 51.6784078]}
+{"id":"178","name":"Herford","location":[8.6636313, 52.1196801]}
+{"id":"179","name":"Wanne-Eickel Hbf","location":[7.1665022, 51.5310626]}
+{"id":"180","name":"Köln Hbf","location":[6.95866504838611, 50.9433161313188]}
+{"id":"181","name":"Köln/Bonn Flughafen","location":[7.11930450070982, 50.8788852515845]}
+{"id":"182","name":"Lippstadt","location":[8.348603, 51.6707184]}
+{"id":"183","name":"Minden(Westf)","location":[8.9344598, 52.2905618]}
+{"id":"184","name":"Mönchengladbach Hbf","location":[6.4460571, 51.1966189]}
+{"id":"185","name":"Rheydt Hbf","location":[6.4399427, 51.1630164]}
+{"id":"186","name":"Mülheim(Ruhr)Hbf","location":[6.8863883, 51.4311758]}
+{"id":"187","name":"Münster(Westf)Hbf","location":[7.6363494, 51.9565801]}
+{"id":"188","name":"Oberhausen Hbf","location":[6.8522107, 51.4746197]}
+{"id":"189","name":"Paderborn Hbf","location":[8.7409023, 51.7129081]}
+{"id":"190","name":"Recklinghausen Hbf","location":[7.2032693, 51.6161768]}
+{"id":"191","name":"Rheine","location":[7.4344486, 52.2762122]}
+{"id":"192","name":"Siegen","location":[8.0165065, 50.8759475]}
+{"id":"193","name":"Soest","location":[8.1045205, 51.5785238]}
+{"id":"194","name":"Solingen Hbf","location":[7.0039365, 51.1611097]}
+{"id":"195","name":"Warburg(Westf)","location":[9.16379, 51.4929599]}
+{"id":"196","name":"Wuppertal Hbf","location":[7.14959027064477, 51.2547544301104]}
+{"id":"197","name":"Andernach","location":[7.4052638, 50.4344995]}
+{"id":"198","name":"Bingen(Rhein) Hbf","location":[7.8836322, 49.9688857]}
+{"id":"199","name":"Boppard Hbf","location":[7.5859931, 50.2313269]}
+{"id":"200","name":"Bullay(DB)","location":[7.1344938, 50.054155]}
+{"id":"201","name":"Cochem(Mosel)","location":[7.1668247, 50.1530699]}
+{"id":"202","name":"Frankenthal Hbf","location":[8.3497814, 49.5354665]}
+{"id":"203","name":"Homburg(Saar)Hbf","location":[7.337083, 49.3278572]}
+{"id":"204","name":"Kaiserslautern Hbf","location":[7.7689255, 49.4359638]}
+{"id":"205","name":"Koblenz Hbf","location":[7.5882258, 50.3506519]}
+{"id":"206","name":"Ludwigshafen(Rh)Hbf","location":[8.4326632, 49.476439]}
+{"id":"207","name":"Mainz Hbf","location":[8.2585855, 50.0012496]}
+{"id":"208","name":"Neustadt(Weinstr)Hbf","location":[8.1408316, 49.3495465]}
+{"id":"209","name":"Remagen","location":[7.2304182, 50.5771552]}
+{"id":"210","name":"Saarbrücken Hbf","location":[6.9903779, 49.2411499]}
+{"id":"211","name":"Trier Hbf","location":[6.6522313, 49.756876]}
+{"id":"212","name":"Wittlich Hbf","location":[6.9431317, 49.9730189]}
+{"id":"213","name":"Worms Hbf","location":[8.3566241, 49.6347895]}
+{"id":"214","name":"Bad Schandau","location":[14.139563, 50.9188294]}
+{"id":"215","name":"Dresden Hbf","location":[13.7318705, 51.0402873]}
+{"id":"216","name":"Dresden-Neustadt","location":[13.7406026, 51.0659329]}
+{"id":"217","name":"Leipzig Hbf","location":[12.3821434, 51.3457607]}
+{"id":"218","name":"Leipzig/Halle Flughafen","location":[12.2238854, 51.4232187]}
+{"id":"219","name":"Bitterfeld","location":[12.3171342, 51.6226168]}
+{"id":"220","name":"Halle(Saale)Hbf","location":[11.9871308, 51.4770985]}
+{"id":"221","name":"Köthen","location":[11.9895451, 51.7524076]}
+{"id":"222","name":"Lutherstadt Wittenberg","location":[12.6624372, 51.8680463]}
+{"id":"223","name":"Magdeburg Hbf","location":[11.6264406, 52.1307026]}
+{"id":"224","name":"Salzwedel","location":[11.1612281, 52.8582825]}
+{"id":"225","name":"Naumburg(Saale)Hbf","location":[11.7966529, 51.1628788]}
+{"id":"226","name":"Schönebeck(Elbe)","location":[11.7330019, 52.0189931]}
+{"id":"227","name":"Stendal","location":[11.8548868, 52.5948095]}
+{"id":"228","name":"Weißenfels","location":[11.9709368, 51.2048112]}
+{"id":"229","name":"Büchen","location":[10.6741074134911, 53.5151689989183]}
+{"id":"230","name":"Fehmarn-Burg","location":[11.1891011, 54.4436288]}
+{"id":"231","name":"Puttgarden","location":[11.2260067, 54.4997699]}
+{"id":"232","name":"Hamburg Hbf","location":[10.0070071, 53.5524837]}
+{"id":"233","name":"Hamburg-Altona","location":[9.9356364, 53.5527657]}
+{"id":"234","name":"Hamburg-Bergedorf","location":[10.2059325, 53.4894294]}
+{"id":"235","name":"Hamburg Dammtor","location":[9.9894908, 53.5607277]}
+{"id":"236","name":"Hamburg-Harburg","location":[9.9914093, 53.4556701]}
+{"id":"237","name":"Heide(Holst)","location":[9.13221749289061, 54.1932434725673]}
+{"id":"238","name":"Husum","location":[9.0551556, 54.4720987]}
+{"id":"239","name":"Itzehoe","location":[9.5105426, 53.9241384]}
+{"id":"240","name":"Kiel Hbf","location":[10.131775876932, 54.314880488538]}
+{"id":"241","name":"Lübeck Hbf","location":[10.6698267, 53.8675377]}
+{"id":"242","name":"Neumünster","location":[9.9801815, 54.076361]}
+{"id":"243","name":"Niebüll","location":[8.8343431, 54.7896282]}
+{"id":"244","name":"Oldenburg(Holst)","location":[10.8827855, 54.2839107]}
+{"id":"245","name":"Westerland(Sylt)","location":[8.3099903, 54.9072656]}
+{"id":"246","name":"Apolda","location":[11.5259843, 51.030958]}
+{"id":"247","name":"Eisenach","location":[10.3322134, 50.9770789]}
+{"id":"248","name":"Erfurt Hbf","location":[11.0378955, 50.9725353]}
+{"id":"249","name":"Gotha","location":[10.7125218, 50.9391016]}
+{"id":"250","name":"Weimar","location":[11.3264539640708, 50.9912283124009]}
+{"id":"252","name":"Zürich HB","location":[8.5394749, 47.3774631]}
+{"id":"253","name":"Baden(CH)","location":[8.3092555, 47.4759681]}
+{"id":"254","name":"Basel SBB","location":[7.58968174174818, 47.5475626302068]}
+{"id":"255","name":"Basel Bad Bf","location":[7.60721894214739, 47.5673340839765]}
+{"id":"256","name":"Emmerich","location":[6.2566915, 51.8341705]}
+{"id":"257","name":"Arnhem","location":[5.9012667, 51.9845028]}
+{"id":"258","name":"Utrecht Centraal","location":[5.17359300311589, 52.096530764324]}
+{"id":"259","name":"Amsterdam Centraal","location":[4.90060429896633, 52.3782853313293]}
+{"id":"260","name":"Liège-Guillemins","location":[5.5665227, 50.6243594]}
+{"id":"261","name":"Bruxelles-Midi","location":[4.3362419, 50.8356748]}
+{"id":"262","name":"Paris Nord","location":[2.3573389, 48.880804]}
+{"id":"263","name":"Bruxelles-Nord","location":[4.361512, 50.8601323]}
+{"id":"264","name":"Siegburg/Bonn","location":[7.2029488, 50.7939777]}
+{"id":"265","name":"Montabaur","location":[7.8248836, 50.4446775]}
+{"id":"266","name":"Limburg Süd","location":[8.0957738, 50.3827686]}
+{"id":"267","name":"Berlin Hbf (tief)","location":[13.3696217, 52.5249767]}
+{"id":"268","name":"Neuss Hbf","location":[6.6843991, 51.2045203]}
+{"id":"269","name":"Herzogenrath","location":[6.0945849, 50.8711559]}
+{"id":"270","name":"Straubing","location":[12.5741838, 48.87691]}
+{"id":"271","name":"Elze(Han)","location":[9.7473807, 52.1208214]}
+{"id":"272","name":"Uelzen","location":[10.5532879, 52.9704706]}
+{"id":"273","name":"Lüneburg","location":[10.4202298, 53.2497365]}
+{"id":"274","name":"Bad Bevensen","location":[10.5738771, 53.0784897]}
+{"id":"275","name":"Riesa","location":[13.287276, 51.3096076]}
+{"id":"276","name":"Köln Messe/Deutz","location":[6.9750829, 50.940873]}
+{"id":"277","name":"Luxembourg","location":[6.1344387, 49.5998316]}
+{"id":"278","name":"Wasserbillig","location":[6.4993546, 49.7128634]}
+{"id":"279","name":"Prien a Chiemsee","location":[12.3467199442697, 47.8550701943319]}
+{"id":"280","name":"Salzburg Hbf","location":[13.0457912, 47.8129351]}
+{"id":"281","name":"Golling-Abtenau","location":[13.1641757, 47.6006774]}
+{"id":"282","name":"Bischofshofen","location":[13.2200955937166, 47.4179029040374]}
+{"id":"283","name":"St. Johann im Pongau","location":[13.1949632, 47.3483742]}
+{"id":"284","name":"Schwarzach-St.Veit","location":[13.155225, 47.3185083]}
+{"id":"285","name":"Dorfgastein","location":[13.1029485, 47.2393779]}
+{"id":"286","name":"Bad Hofgastein","location":[13.1005485, 47.19535]}
+{"id":"287","name":"Bad Gastein","location":[13.1319959, 47.1117569]}
+{"id":"288","name":"Mallnitz-Obervellach","location":[13.1757081, 46.9816906]}
+{"id":"289","name":"Spittal-Millstättersee","location":[13.4879071, 46.796108]}
+{"id":"290","name":"Villach Hbf","location":[13.8482311, 46.6186009]}
+{"id":"291","name":"Velden am Wörthersee","location":[14.0406239, 46.6136299]}
+{"id":"292","name":"Pörtschach/Wörthersee","location":[14.1448209, 46.6359543]}
+{"id":"293","name":"Krumpendorf/Wörthersee","location":[14.3044524, 46.624135]}
+{"id":"294","name":"Klagenfurt Hbf","location":[14.3136982, 46.6157887]}
+{"id":"295","name":"Meckenbeuren","location":[9.558367, 47.6996018]}
+{"id":"296","name":"Bregenz","location":[9.7397489, 47.5031251]}
+{"id":"297","name":"Dornbirn","location":[9.7383342, 47.4174698]}
+{"id":"298","name":"Hohenems","location":[9.6811312, 47.3649554]}
+{"id":"299","name":"Götzis","location":[9.636576, 47.3365363]}
+{"id":"300","name":"Rankweil","location":[9.6373604, 47.271996]}
+{"id":"301","name":"Feldkirch","location":[9.6041974, 47.2407921]}
+{"id":"302","name":"Bludenz","location":[9.815307, 47.1544319]}
+{"id":"303","name":"Langen am Arlberg","location":[10.1214126, 47.1315366]}
+{"id":"304","name":"St. Anton am Arlberg","location":[10.2674237, 47.127439]}
+{"id":"305","name":"Landeck-Zams","location":[10.5784613, 47.1481474]}
+{"id":"306","name":"Imst-Pitztal","location":[10.7616464, 47.2192792]}
+{"id":"307","name":"Ötztal","location":[10.8587014, 47.2385516]}
+{"id":"308","name":"Telfs-Pfaffenhofen","location":[11.0806705, 47.3006923]}
+{"id":"309","name":"Innsbruck Hbf","location":[11.4010086, 47.2632776]}
+{"id":"310","name":"St Georgen(Schwarzw)","location":[8.3418904, 48.1238364]}
+{"id":"311","name":"Immendingen","location":[8.7293948, 47.9363058]}
+{"id":"312","name":"Kufstein","location":[12.1655717, 47.5829464]}
+{"id":"313","name":"Wörgl Hbf","location":[12.0609807, 47.4916945]}
+{"id":"314","name":"Jenbach","location":[11.7785118, 47.3885174]}
+{"id":"315","name":"Bad Endorf","location":[12.3017035, 47.9049387]}
+{"id":"316","name":"Bad Hersfeld","location":[9.7165832, 50.8699133]}
+{"id":"317","name":"Praha hl.n.","location":[14.4341908, 50.0877642]}
+{"id":"318","name":"Praha-Holesovice","location":[14.4397133, 50.1107717]}
+{"id":"319","name":"Usti nad Labem hl.n.","location":[14.0438516, 50.659827]}
+{"id":"320","name":"Decin hl.n.","location":[14.1871306685348, 50.7858322558766]}
+{"id":"321","name":"Szczecin Gumience","location":[14.4947572, 53.3976724]}
+{"id":"322","name":"Szczecin Glowny","location":[14.5512216, 53.4193472]}
+{"id":"323","name":"Kolin(CZ)","location":[15.215094, 50.0250924]}
+{"id":"324","name":"Pardubice hl.n.","location":[15.7744445, 50.0375106]}
+{"id":"325","name":"Brno hl.n.","location":[16.61304122497, 49.1910924014921]}
+{"id":"326","name":"Wien Praterstern","location":[16.3922817334761, 48.2189013564823]}
+{"id":"327","name":"Wien Floridsdorf","location":[16.3998304866246, 48.2558739524716]}
+{"id":"328","name":"Breclav","location":[16.892955, 48.75365]}
+{"id":"329","name":"Ingolstadt Hbf","location":[11.4376282, 48.7444159]}
+{"id":"330","name":"Jena Paradies","location":[11.5876512, 50.9249522]}
+{"id":"331","name":"Bamberg","location":[10.8996896, 49.900981]}
+{"id":"332","name":"Treuchtlingen","location":[10.9080234, 48.9607784]}
+{"id":"333","name":"Übersee","location":[12.4875723, 47.8220593]}
+{"id":"334","name":"Ainring","location":[12.9644861, 47.8149401]}
+{"id":"335","name":"Hammerau","location":[12.9459982, 47.7956674]}
+{"id":"336","name":"Piding","location":[12.9113274, 47.7596951]}
+{"id":"337","name":"Bad Reichenhall","location":[12.8818495, 47.7313052]}
+{"id":"338","name":"Bad Reichenhall-Kirchberg","location":[12.8741077, 47.7183538]}
+{"id":"339","name":"Bayerisch Gmain","location":[12.8980967, 47.7194842]}
+{"id":"340","name":"Bischofswiesen","location":[12.9601157, 47.6518575]}
+{"id":"341","name":"Zell am See","location":[12.8175624785312, 47.3249578204316]}
+{"id":"342","name":"Saalfelden","location":[12.8297507, 47.4268548]}
+{"id":"343","name":"Hochfilzen","location":[12.6381562035072, 47.4769072281631]}
+{"id":"344","name":"Fieberbrunn","location":[12.5289567, 47.4911488]}
+{"id":"345","name":"St. Johann in Tirol","location":[12.4307114, 47.5195745]}
+{"id":"346","name":"Kitzbühel","location":[12.3909514, 47.4543689]}
+{"id":"347","name":"Kitzbühel Hahnenkamm","location":[12.3899894, 47.4433273]}
+{"id":"348","name":"Kirchberg in Tirol","location":[12.3091588, 47.4489674]}
+{"id":"349","name":"Brixen im Thale","location":[12.2604255, 47.4491677]}
+{"id":"350","name":"Westendorf in Tirol","location":[12.2142949093567, 47.3773004848969]}
+{"id":"351","name":"Hopfgarten im Brixental","location":[12.1150363456725, 47.3626459416951]}
+{"id":"352","name":"Rendsburg","location":[9.670729, 54.3026177]}
+{"id":"353","name":"Schleswig","location":[9.5375986, 54.4997659]}
+{"id":"354","name":"Flensburg","location":[9.43992180577694, 54.7900562080601]}
+{"id":"355","name":"Saalfeld(Saale)","location":[11.37398, 50.6503213]}
+{"id":"356","name":"Lichtenfels","location":[11.059494, 50.1462488]}
+{"id":"357","name":"Erlangen","location":[11.0020037823203, 49.5960118277772]}
+{"id":"358","name":"Ludwigsburg","location":[9.1852819, 48.8923191]}
+{"id":"359","name":"Strasbourg","location":[7.7339418, 48.585244]}
+{"id":"360","name":"Paris Est","location":[2.245182, 48.8400023]}
+{"id":"361","name":"Linz Hbf","location":[14.2915871, 48.2902898]}
+{"id":"362","name":"St.Pölten Hbf","location":[15.6261299, 48.2082272]}
+{"id":"363","name":"Wien Westbahnhof","location":[16.3363582, 48.1964515]}
+{"id":"364","name":"Wien Meidling","location":[16.3332786, 48.174191]}
+{"id":"365","name":"Hegyeshalom","location":[17.1466343, 47.9132657]}
+{"id":"366","name":"Mosonmagyarovar","location":[17.2664071, 47.8503476]}
+{"id":"367","name":"Györ","location":[17.6349242, 47.6820368]}
+{"id":"368","name":"Tatabanya","location":[18.393582, 47.5850118]}
+{"id":"369","name":"Budapest-Kelenföld","location":[19.0216844629553, 47.4651190769941]}
+{"id":"370","name":"Budapest-Keleti pu","location":[19.085361, 47.5003852]}
+{"id":"371","name":"Hildesheim Hbf","location":[9.9545154, 52.1610031]}
+{"id":"372","name":"Landstuhl","location":[7.5660308, 49.4162511]}
+{"id":"373","name":"Salzburg Süd","location":[13.0784577, 47.7699563]}
+{"id":"374","name":"Hallein","location":[13.0996778, 47.6850291]}
+{"id":"375","name":"Werfen","location":[13.1888872, 47.4757761]}
+{"id":"376","name":"Radstadt","location":[13.4664504, 47.383948]}
+{"id":"377","name":"Schladming","location":[13.6780676, 47.3937424]}
+{"id":"378","name":"Stainach-Irdning","location":[14.1067545, 47.5291889]}
+{"id":"379","name":"Liezen","location":[14.2420272116356, 47.562845351879]}
+{"id":"380","name":"Selzthal","location":[14.3122344, 47.5500209]}
+{"id":"381","name":"Stadt Rottenmann","location":[14.3664394, 47.5273483]}
+{"id":"382","name":"St.Michael in Obersteiermark","location":[15.0190276, 47.3387657]}
+{"id":"383","name":"Leoben Hbf","location":[15.0896236, 47.3866658]}
+{"id":"384","name":"Graz Hbf","location":[15.4172220319982, 47.072405082006]}
+{"id":"385","name":"Wels Hbf","location":[14.0270556, 48.1662137]}
+{"id":"386","name":"Attnang-Puchheim","location":[13.7203366, 48.0122125]}
+{"id":"387","name":"Vöcklabruck","location":[13.6636137998272, 48.009936327417]}
+{"id":"388","name":"Steindorf bei Straßwalchen","location":[13.2393706, 47.9668492]}
+{"id":"389","name":"Neustrelitz Hbf","location":[13.0745207, 53.3592984]}
+{"id":"390","name":"Waren(Müritz)","location":[12.6808112, 53.5214063]}
+{"id":"391","name":"Haiger","location":[8.2226784, 50.7409647]}
+{"id":"392","name":"Paternion-Feistritz","location":[13.6698335, 46.710519]}
+{"id":"393","name":"Berlin Zoologischer Garten","location":[13.3327541, 52.5073155]}
+{"id":"394","name":"Berlin-Lichtenberg","location":[13.4969506, 52.5104217]}
+{"id":"395","name":"Neu-Ulm","location":[10.0053958, 48.3933145]}
+{"id":"396","name":"Kassel Hbf","location":[9.4883079, 51.3184915]}
+{"id":"397","name":"Marienhafe","location":[7.2704655, 53.5209794]}
+{"id":"398","name":"Calau(Nl)","location":[13.9796412, 51.7379806]}
+{"id":"399","name":"Berlin-Schönefeld Flughafen","location":[13.5133823, 52.3920379]}
+{"id":"400","name":"Ibbenbüren","location":[7.7226148, 52.2762558]}
+{"id":"401","name":"Hengelo","location":[6.7938497, 52.2617693]}
+{"id":"402","name":"Almelo","location":[6.6556701, 52.3569266]}
+{"id":"403","name":"Deventer","location":[6.161498, 52.2570236]}
+{"id":"404","name":"Apeldoorn","location":[5.9681042, 52.2093815]}
+{"id":"405","name":"Amersfoort","location":[5.374055, 52.1538642]}
+{"id":"406","name":"Hilversum","location":[5.1816043, 52.2265354]}
+{"id":"407","name":"Duivendrecht","location":[4.9362442, 52.3236918]}
+{"id":"408","name":"Amsterdam Zuid","location":[4.8730154, 52.3388154]}
+{"id":"409","name":"Schiphol (Airport)","location":[4.76228, 52.30952]}
+{"id":"410","name":"Neustadt(Kr Marburg)","location":[9.120863, 50.850647]}
+{"id":"411","name":"Stadtallendorf","location":[9.0158232, 50.8249652]}
+{"id":"412","name":"Frankfurt(Main)West","location":[8.6389828, 50.1192878]}
+{"id":"413","name":"Kuty","location":[17.017724, 48.659277]}
+{"id":"414","name":"Bratislava hl.st.","location":[17.1190464705473, 48.148840869375]}
+{"id":"415","name":"Nove Zamky","location":[18.1740012, 47.9951908]}
+{"id":"416","name":"Sturovo","location":[18.6797464, 47.8001468]}
+{"id":"417","name":"Szob","location":[18.8609063, 47.8215555]}
+{"id":"418","name":"Nagymaros-Visegrad","location":[18.9531948, 47.7816664]}
+{"id":"419","name":"Vac","location":[19.1330666, 47.7827577]}
+{"id":"420","name":"Rakospalota-Ujpest","location":[19.1123362, 47.5657338]}
+{"id":"421","name":"Ceska Trebova","location":[16.4467131, 49.8971222]}
+{"id":"422","name":"Wien Simmering","location":[16.4080416, 48.1754975]}
+{"id":"423","name":"Wiener Neustadt Hbf","location":[16.2339004, 47.8111816]}
+{"id":"424","name":"Bruck/Mur","location":[15.2794411, 47.4138721]}
+{"id":"425","name":"Knittelfeld","location":[14.8369656, 47.2149648]}
+{"id":"426","name":"St.Veit/Glan","location":[14.5392509812378, 46.5854728219562]}
+{"id":"427","name":"Liestal","location":[7.73137, 47.484371]}
+{"id":"428","name":"Sissach","location":[7.8116786, 47.4630012]}
+{"id":"429","name":"Aarau","location":[8.05124910871866, 47.3915246268039]}
+{"id":"430","name":"Lenzburg","location":[8.18050941529623, 47.3855587924767]}
+{"id":"431","name":"Thalwil","location":[8.5644537, 47.2959171]}
+{"id":"432","name":"Wädenswil","location":[8.6753756, 47.2294573]}
+{"id":"433","name":"Pfäffikon SZ","location":[8.7782066, 47.203053]}
+{"id":"434","name":"Ziegelbrücke","location":[9.059976, 47.136709]}
+{"id":"435","name":"Sargans","location":[9.44884903025585, 47.0555849765314]}
+{"id":"436","name":"Bad Ragaz","location":[9.5050776, 47.0104217]}
+{"id":"437","name":"Landquart","location":[9.5540084, 46.9664255]}
+{"id":"438","name":"Chur","location":[9.528942, 46.853591]}
+{"id":"439","name":"Rastatt","location":[8.2154944, 48.8603994]}
+{"id":"440","name":"Interlaken Ost","location":[7.869755, 46.690908]}
+{"id":"441","name":"Interlaken West","location":[7.8514, 46.682923]}
+{"id":"442","name":"Spiez","location":[7.679373, 46.686592]}
+{"id":"443","name":"Thun","location":[7.629334, 46.754575]}
+{"id":"444","name":"Bern","location":[7.438703, 46.948949]}
+{"id":"445","name":"Olten","location":[7.907622, 47.352027]}
+{"id":"446","name":"Hünfeld","location":[9.7630436, 50.673296]}
+{"id":"447","name":"Schlüchtern","location":[9.5098449, 50.341414]}
+{"id":"448","name":"Offenbach(Main)Hbf","location":[8.7601147, 50.0994694]}
+{"id":"449","name":"Schaffhausen","location":[8.6326623, 47.6983249]}
+{"id":"450","name":"Bülach","location":[8.5362586, 47.5240143]}
+{"id":"451","name":"Oberau","location":[11.1390559, 47.5593142]}
+{"id":"452","name":"Garmisch-Partenkirchen","location":[11.0970185, 47.4917845]}
+{"id":"453","name":"Mittenwald","location":[11.2654529, 47.4396024]}
+{"id":"454","name":"Seefeld in Tirol","location":[11.1894654, 47.3285956]}
+{"id":"455","name":"Tutzing","location":[11.2729518646321, 47.9069051360769]}
+{"id":"456","name":"Murnau","location":[11.1958709, 47.6786891]}
+{"id":"457","name":"Rzepin","location":[14.8150697, 52.350229]}
+{"id":"458","name":"Swiebodzin","location":[15.5411544, 52.2456055]}
+{"id":"459","name":"Poznan Gl.","location":[16.9230018740802, 52.4062306316991]}
+{"id":"460","name":"Konin","location":[18.2523065, 52.2312738]}
+{"id":"461","name":"Kutno","location":[19.3484456, 52.2271958]}
+{"id":"462","name":"Warszawa Zachodnia","location":[20.9653948, 52.2201275]}
+{"id":"463","name":"Warszawa Centralna","location":[21.003376, 52.2286222]}
+{"id":"464","name":"Warszawa Wschodnia","location":[21.0519833, 52.2517387]}
+{"id":"465","name":"Zary","location":[15.1402286, 51.638303]}
+{"id":"466","name":"Wegliniec","location":[15.2233962, 51.2901321]}
+{"id":"467","name":"Boleslawiec","location":[15.5688033, 51.2660352]}
+{"id":"468","name":"Chojnow","location":[15.9370373, 51.2776453]}
+{"id":"469","name":"Legnica","location":[16.1680041, 51.2136048]}
+{"id":"470","name":"Wroclaw Glowny","location":[17.0372392, 51.0983203]}
+{"id":"471","name":"Opole Glowne","location":[17.9260627, 50.662043]}
+{"id":"472","name":"Kedzierzyn Kozle","location":[18.2053322, 50.3446253]}
+{"id":"473","name":"Gliwice","location":[18.6769546, 50.3010191]}
+{"id":"474","name":"Zabrze","location":[18.7871299, 50.3051912]}
+{"id":"475","name":"Katowice","location":[19.0171063, 50.2574136]}
+{"id":"476","name":"Krakow Glowny","location":[19.9478244, 50.0674988]}
+{"id":"477","name":"Zbaszynek","location":[15.8178822, 52.2424041]}
+{"id":"478","name":"Padborg st","location":[9.358963, 54.8234993]}
+{"id":"479","name":"Kolding st","location":[9.47905, 55.4894999]}
+{"id":"480","name":"Fredericia st","location":[9.7562169, 55.565268]}
+{"id":"481","name":"Vejle st","location":[9.5368738, 55.7058795]}
+{"id":"482","name":"Horsens st","location":[9.8355605, 55.8626967]}
+{"id":"483","name":"Skanderborg st","location":[9.9254619, 56.0436129]}
+{"id":"484","name":"Aarhus","location":[10.2134046, 56.1496278]}
+{"id":"485","name":"Roedby","location":[11.3540438, 54.6542611]}
+{"id":"486","name":"Nykoebing F st","location":[11.8710212, 54.7634171]}
+{"id":"487","name":"Vordingborg st","location":[11.9166575, 55.0166663]}
+{"id":"488","name":"Naestved st","location":[11.6226345515315, 55.3375232028265]}
+{"id":"489","name":"Hoeje Taastrup st","location":[12.2692637, 55.6488082]}
+{"id":"490","name":"Koebenhavn H","location":[12.570069, 55.6867239]}
+{"id":"491","name":"Munster(Örtze)","location":[10.0962768, 52.9933408]}
+{"id":"492","name":"Klanxbüll","location":[8.6765138, 54.8620731]}
+{"id":"493","name":"Morsum","location":[8.4327206, 54.8722238]}
+{"id":"494","name":"Keitum","location":[8.36912287361755, 54.8889857605831]}
+{"id":"495","name":"Odense st","location":[10.3862358, 55.401775]}
+{"id":"496","name":"Ringsted st","location":[11.7865307, 55.43835895]}
+{"id":"497","name":"Aschaffenburg Hbf","location":[9.1433047, 49.9801484]}
+{"id":"498","name":"Timmendorferstrand","location":[10.7622355, 53.9942921]}
+{"id":"499","name":"Scharbeutz","location":[10.7456812, 54.018563]}
+{"id":"500","name":"Haffkrug","location":[10.7426949, 54.0541908]}
+{"id":"501","name":"Sierksdorf","location":[10.7681294, 54.0681657]}
+{"id":"502","name":"Wolgast","location":[13.7687543, 54.0437154]}
+{"id":"503","name":"Wolgast Hafen","location":[13.7799982, 54.0522812]}
+{"id":"504","name":"Trassenheide","location":[13.8681738, 54.0814303]}
+{"id":"505","name":"Zempin","location":[13.9591392, 54.0659693]}
+{"id":"506","name":"Koserow","location":[13.9991734, 54.0452142]}
+{"id":"507","name":"Kölpinsee","location":[14.0209617, 54.0371724]}
+{"id":"508","name":"Ückeritz","location":[14.0496478, 54.0137661]}
+{"id":"509","name":"Bansin Seebad","location":[14.129437, 53.9642261]}
+{"id":"510","name":"Magdeburg-Buckau","location":[11.6301293, 52.1092804]}
+{"id":"511","name":"Gemünden(Main)","location":[9.7004189, 50.049607]}
+{"id":"512","name":"Friedrichstadt","location":[9.0790229, 54.3781676]}
+{"id":"513","name":"Eltville","location":[8.1211711, 50.0275486]}
+{"id":"514","name":"Rüdesheim(Rhein)","location":[7.914701, 49.976903]}
+{"id":"515","name":"Assmannshausen","location":[7.8674758, 49.9856087]}
+{"id":"516","name":"Neuwied","location":[7.4730971, 50.431391]}
+{"id":"517","name":"Bad Hönningen","location":[7.3106049, 50.5139492]}
+{"id":"518","name":"Linz(Rhein)","location":[7.2760623, 50.5692781]}
+{"id":"519","name":"Königswinter","location":[7.193044, 50.6791829]}
+{"id":"520","name":"St. Margrethen","location":[9.6384195, 47.4533593]}
+{"id":"521","name":"St. Gallen(CH)","location":[9.3693076, 47.4232765]}
+{"id":"522","name":"Winterthur","location":[8.7235464, 47.5004275]}
+{"id":"523","name":"Zürich Flughafen","location":[8.5621427, 47.4503417]}
+{"id":"524","name":"Elmshorn","location":[9.659403, 53.753957]}
+{"id":"525","name":"Langenhagen Mitte","location":[9.7257471, 52.4403818]}
+{"id":"526","name":"Forbach(F)","location":[6.9010276, 49.1894419]}
+{"id":"527","name":"Heilbad Heiligenstadt","location":[10.1241659, 51.3771913]}
+{"id":"528","name":"Leinefelde","location":[10.3281359, 51.3889455]}
+{"id":"529","name":"Nordhausen","location":[10.7892306, 51.4929186]}
+{"id":"530","name":"Sangerhausen","location":[11.2946553, 51.4797857]}
+{"id":"531","name":"Lutherstadt Eisleben","location":[11.5515004, 51.5180686]}
+{"id":"532","name":"Föderlach","location":[13.9592378, 46.6021233]}
+{"id":"533","name":"Neustadt(Aisch)Bahnhof","location":[10.5888845, 49.5767861]}
+{"id":"534","name":"Brennero/Brenner","location":[11.5053919, 47.0024508]}
+{"id":"535","name":"Fortezza/Franzensfeste","location":[11.6101555, 46.7888059]}
+{"id":"536","name":"Bressanone/Brixen","location":[11.6498056, 46.7098958]}
+{"id":"537","name":"Bolzano/Bozen","location":[11.3585963, 46.4964549]}
+{"id":"538","name":"Trento","location":[11.1190236, 46.0722333]}
+{"id":"539","name":"Rovereto","location":[11.0384953, 45.8915375]}
+{"id":"540","name":"Verona Porta Nuova","location":[10.9831832, 45.4287521]}
+{"id":"541","name":"Landshut(Bay)Hbf","location":[12.1359608, 48.5476445]}
+{"id":"542","name":"Schwandorf","location":[12.1043482, 49.3260332]}
+{"id":"543","name":"Cham(Oberpf)","location":[12.6570564, 49.2220657]}
+{"id":"544","name":"Furth i Wald","location":[12.8395126, 49.3098057]}
+{"id":"545","name":"Domazlice","location":[12.9433034, 49.4352397]}
+{"id":"546","name":"Plzen hl.n.","location":[13.388259978721, 49.7433308143752]}
+{"id":"547","name":"Rokycany","location":[13.5921159, 49.7401223]}
+{"id":"548","name":"Horovice","location":[13.8991897, 49.8433245]}
+{"id":"549","name":"Beroun","location":[14.0775755, 49.9573245]}
+{"id":"550","name":"Praha-Smichov","location":[14.4080973, 50.0609111]}
+{"id":"551","name":"Bologna Centrale","location":[11.3434453, 44.5061175]}
+{"id":"552","name":"Vicenza","location":[11.5404661, 45.541101]}
+{"id":"553","name":"Padova","location":[11.8804405, 45.4176683]}
+{"id":"554","name":"Venezia Mestre","location":[12.2320635, 45.4821164]}
+{"id":"555","name":"Venezia Santa Lucia","location":[12.3204994, 45.441379]}
+{"id":"556","name":"Peschiera del Garda","location":[10.7023637211055, 45.4385843609407]}
+{"id":"557","name":"Desenzano del Garda/Sirmione","location":[10.5363356, 45.4626357]}
+{"id":"558","name":"Brescia","location":[10.2129874264182, 45.5325118948305]}
+{"id":"559","name":"Milano Lambrate","location":[9.237351, 45.4849299]}
+{"id":"560","name":"Milano Porta Garibaldi","location":[9.1875734, 45.4844717]}
+{"id":"561","name":"Brannenburg","location":[12.106896, 47.7410591]}
+{"id":"562","name":"Oberaudorf","location":[12.1752752, 47.652617]}
+{"id":"563","name":"Kiefersfelden","location":[12.1903955, 47.6098069]}
+{"id":"564","name":"Freising","location":[11.7450719, 48.3955686]}
+{"id":"565","name":"Firenze S.M.N.","location":[11.2477468, 43.7767141]}
+{"id":"566","name":"Chiusi-Chianciano Terme","location":[11.9575925, 43.0024881]}
+{"id":"567","name":"Orvieto","location":[12.1265870161234, 42.7238204484311]}
+{"id":"568","name":"Roma Termini","location":[12.5023317, 41.9008151]}
+{"id":"569","name":"S.Bonifacio","location":[11.2744864, 45.4027957]}
+{"id":"570","name":"Ceska Kubice","location":[12.8651836, 49.3743969]}
+{"id":"571","name":"Metz Ville","location":[6.1959447277014, 49.1082491380759]}
+{"id":"572","name":"Bonn-Beuel","location":[7.1277256, 50.7385041]}
+{"id":"573","name":"Eindhoven","location":[5.4795029, 51.4429631]}
+{"id":"574","name":"Zadni Treban","location":[14.2032255, 49.9187728]}
+{"id":"575","name":"'s-Hertogenbosch","location":[5.2940229, 51.690557]}
+{"id":"576","name":"Biblis","location":[8.4506733, 49.6890292]}
+{"id":"577","name":"Modrice","location":[16.6061991, 49.1338955]}
+{"id":"578","name":"Brno-Zidenice","location":[16.6360388, 49.2042467]}
+{"id":"579","name":"Schwetzingen","location":[8.5785908, 49.3839599]}
+{"id":"580","name":"Tinglev st","location":[9.2582018, 54.9361244]}
+{"id":"581","name":"Berlin-Charlottenburg","location":[13.3047605, 52.5048483]}
+{"id":"582","name":"Köln Messe/Deutz","location":[6.9750829, 50.940873]}
+{"id":"583","name":"Hannover Messe/Laatzen","location":[9.7925165, 52.3175103]}
+{"id":"584","name":"Leipzig Messe","location":[12.3894769, 51.3957432]}
+{"id":"585","name":"Amsterdam Sloterdijk","location":[4.83827193839403, 52.3890133093794]}
+{"id":"586","name":"Amsterdam Lelylaan","location":[4.8341567, 52.3578401]}
+{"id":"587","name":"Hoofddorp","location":[4.6983305, 52.2927138]}
+{"id":"588","name":"Budapest-Nyugati pu","location":[19.0570037, 47.5104694]}
+{"id":"589","name":"Zielona Gora","location":[15.5045677, 51.9382922]}
+{"id":"594","name":"Roskilde st","location":[12.0885285, 55.6392677]}
+{"id":"595","name":"Schifferstadt","location":[8.364835000354, 49.3932755774185]}
+{"id":"596","name":"Speyer Hbf","location":[8.4283769156048, 49.3240512823473]}
+{"id":"597","name":"Germersheim","location":[8.3647372, 49.2256995]}
+{"id":"598","name":"Frutigen","location":[7.651665, 46.589052]}
+{"id":"599","name":"Kandersteg","location":[7.671286, 46.495763]}
+{"id":"600","name":"Goppenstein","location":[7.75546, 46.3668984]}
+{"id":"601","name":"Brig","location":[8.02187094277739, 46.2816273069591]}
+{"id":"602","name":"Amsterdam RAI","location":[4.8900462, 52.3370321]}
+{"id":"603","name":"Noerre Alslev st","location":[11.85777, 54.889795]}
+{"id":"604","name":"Marseille-St-Charles","location":[5.3821136, 43.3042398]}
+{"id":"605","name":"Aix-en-Provence TGV","location":[5.3173898, 43.4550877]}
+{"id":"606","name":"Avignon TGV","location":[4.7860599, 43.921759]}
+{"id":"607","name":"Lyon Part Dieu","location":[4.8246381, 45.7502607]}
+{"id":"608","name":"Mâcon Ville","location":[4.8246604, 46.3027233]}
+{"id":"609","name":"Besançon Franche-Comté TGV","location":[5.9534277, 47.3078246]}
+{"id":"610","name":"Belfort-Montbéliard TGV","location":[6.8969534, 47.5858411]}
+{"id":"611","name":"Mulhouse Ville","location":[7.3429745, 47.7418382]}
+{"id":"612","name":"Chalon-sur-Saone","location":[4.842921, 46.7815903]}
+{"id":"613","name":"Rostock-Kassebohm","location":[12.1629165, 54.0794066]}
+{"id":"614","name":"Schwerin Mitte","location":[0, 0]}
+{"id":"615","name":"Schwerin Süd","location":[0, 0]}
+{"id":"616","name":"Holthusen","location":[0, 0]}
+{"id":"617","name":"Sülstorf","location":[0, 0]}
+{"id":"618","name":"Rastow","location":[0, 0]}
+{"id":"619","name":"Lüblow(Meckl)","location":[0, 0]}
+{"id":"620","name":"Grabow(Meckl)","location":[0, 0]}
+{"id":"621","name":"Karstädt","location":[0, 0]}
+{"id":"622","name":"Bad Wilsnack","location":[0, 0]}
+{"id":"623","name":"Glöwen","location":[0, 0]}
+{"id":"624","name":"Breddin","location":[0, 0]}
+{"id":"625","name":"Neustadt(Dosse)","location":[0, 0]}
+{"id":"626","name":"Friesack(Mark)","location":[0, 0]}
+{"id":"627","name":"Paulinenaue","location":[0, 0]}
+{"id":"628","name":"Nauen","location":[0, 0]}
+{"id":"629","name":"Falkensee","location":[0, 0]}
+{"id":"630","name":"Berlin Friedrichstr","location":[0, 0]}
+{"id":"631","name":"Berlin Alexanderplatz","location":[0, 0]}
+{"id":"632","name":"Königs Wusterhausen","location":[0, 0]}
+{"id":"633","name":"Brand(Niederlausitz)","location":[0, 0]}
+{"id":"634","name":"Raddusch","location":[0, 0]}
+{"id":"635","name":"Vetschau","location":[0, 0]}
+{"id":"636","name":"Kunersdorf","location":[0, 0]}
+{"id":"637","name":"Kaufering","location":[0, 0]}
+{"id":"638","name":"Neudietendorf","location":[0, 0]}
+{"id":"639","name":"Neubrandenburg","location":[0, 0]}

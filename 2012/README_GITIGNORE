@@ -1,0 +1,14 @@
+Place a file called .gitignore_global in home directory and fill in the following content:
+
+*~
+.DS_Store
+.gitignore
+*.iml
+*.ipr
+*.iws
+.settings/
+.metadata/
+.classpath
+.project
+target/
+

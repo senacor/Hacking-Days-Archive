@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'mobile-node-twitter' target in the 'mobile-node-twitter' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#endif

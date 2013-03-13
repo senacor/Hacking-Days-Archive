@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <title>Senacor Social Network Client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Senacor HackingDays 2012">
+
+  <!-- Le styles -->
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/DT_bootstrap.css">
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  -->
+  <script type="text/javascript" charset="utf-8" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/js/bootstrap.js"></script>
+  <script src="/js/spin.js"></script>
+  <script type="text/javascript" charset="utf-8" language="javascript" src="/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf-8" language="javascript" src="/js/DT_bootstrap.js"></script>
+  
+</head>
+
+<body onload="onBodyLoad();">
+
+<div class="container">
+	<div class="navbar navbar-fixed-top">
+	   <div class="navbar-inner">
+	     <div class="container">
+	       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	         <span class="icon-bar"></span>
+	         <span class="icon-bar"></span>
+	         <span class="icon-bar"></span>
+	       </a>
+	       <a class="brand" href="#">Hacking Days 2012</a>
+	       <div class="btn-group pull-right">
+	         <a class="btn" onclick=pageRefresh();><i id="icon-refresh" class="icon-refresh"></i></a>
+	       </div>
+	     </div>
+	   </div>
+	 </div>
+	<div class="hero-unit">
+	  <h2>Senacor Social Network Client</h2>
+	  <p>Tweet report. See who is the biggest node-tweeter ;-)</p>
+	</div>
+	 
+	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped" id="report">
+    	<thead>
+          <tr>
+            <th>User</th>
+            <th>Total Tweets</th>
+            <th>Total Tweets Size (bytes)</th>
+            <th>Total Images</th>
+            <th>Total Images Size (bytes)</th>
+            <th>Total Size (bytes)</th>
+          </tr>
+        </thead>
+        <tbody>
+	  	</tbody>
+    </table>
+	 
+	<div class="container" id="spinnerTweetReport"> </div>
+	<hr>
+	 
+	<footer>
+	  <p>&copy; Senacor Technologies AG 2012</p>
+	</footer>
+</div>
+
+<script type="text/javascript">
+	var opts = {
+	  width:2, // The line thickness
+	  radius:4 // The radius of the inner circle
+	};
+	var target = document.getElementById('spinnerTweetReport');
+	var spinnerTweetReport = new Spinner(opts).spin(target);
+	jQuery.ajax({
+	  type : "GET",
+	  url : '/restTweetReport'
+	}).success(function(data) {
+	  console.log(JSON.stringify(data));
+	  spinnerTweetReport.stop();
+	  for (var key in data) {
+	    $('#report > tbody:last').append('<tr>'
+          + '<td>' + data[key]['_id'] + '</td>'
+          + '<td>' + data[key]['value']['tweet_count'] + '</td>'
+          + '<td>' + data[key]['value']['tweet_size']  + '</td>'
+          + '<td>' + data[key]['value']['img_count'] + '</td>'
+          + '<td>' + data[key]['value']['img_size'] + '</td>'
+          + '<td>' + (data[key]['value']['tweet_size'] + data[key]['value']['img_size']) + '</td>'
+        + '</tr>');
+	  }
+	  var tableinit = function() {
+		$('#report').dataTable({
+		  "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+		  "sPaginationType": "bootstrap",
+		  "oLanguage": {
+		    "sLengthMenu": "_MENU_ records per page"
+    	   }
+  		});
+	  }
+	  tableinit();
+	});
+</script>
+
+</body>
+</html>

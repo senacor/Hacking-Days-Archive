@@ -1,0 +1,14 @@
+Unter ckallepp liegen verschiedene Code-snippets zu node.js/mongodb
+
+
+
+Importieren von JSON-Daten in mongodb:
+./mongoimport --db db --collection stations --file stations.json
+
+Achtung: Jeder Datensatz/Collection muss in der JSON-Datei pro Zeile vorliegen!
+
+Geo-Spatial - Ermitteln aller Stationen im Umkreis von 50km:
+db.stations.find({location : {$near :[9,50], $maxDistance : 50/111.12}})
+
+Kleiner Tipp: Bevor man eine Suche durchführen kann, muss man mit folgendem Befehl einen Index erzeugen:
+db.stations.ensureIndex({ location : "2d" })

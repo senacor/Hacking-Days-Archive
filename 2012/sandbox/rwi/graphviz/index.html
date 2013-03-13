@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <script language="javascript" type="text/javascript" src="js/jquery-1.7.2.js"></script>
+        <script language="javascript" type="text/javascript" src="js/arbor.js"></script>
+        <script language="javascript" type="text/javascript" src="js/arbor-tween.js"></script>
+        <script language="javascript" type="text/javascript" src="js/graphics.js"></script>
+        <script language="javascript" type="text/javascript" src="js/renderer.js"></script>
+    </head>
+    <body>
+        <canvas id="viewport" width="800" height="600"></canvas>
+        <div class="log"></div>
+
+        <script language="javascript" type="text/javascript">
+            $("div.log").ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
+                                     $(this).text(thrownError);
+                                   });
+            
+            viewport.style.border = "red 1px solid";
+            
+            var sys = arbor.ParticleSystem(1000, 400,0.2);
+            sys.parameters({gravity:true});
+            sys.renderer = Renderer("#viewport") ;
+            
+            var a = {  nodes:{    kl:{'label':'Katharina'},    mt:{'label':'Matthias'},    mp:{'label':'Marcus'},    rw:{'label':'Ralph'},  },  edges:{    kl:{mt:{}, mp:{}, rw:{},     }  }};
+                        
+            var data = {
+                nodes:{
+                    senacor:{'color':'red','shape':'dot','label':'Senacor'},
+                    hr:{'color':'green','shape':'dot','label':'Human Res.'},
+                    ps:{'color':'blue','shape':'dot','label':'Prof. Service'}
+                }, edges:{
+                    senacor:{ hr:{length:3}, ps:{length:5} }
+                }
+            }
+            
+            // var data2 = { nodes:{ kl:{'label':'Katharina'}, mt:{'label':'Matthias'}, mp:{'label':'Marcus'}, rw:{'label':'Ralph'}, }, edges:{ kl:{mt:{}, mp:{}, rw:{}, } }}
+            
+            sys.graft(data);
+            
+            setTimeout(function() {
+                var postLoadData = {
+                    nodes:{
+                        senacor:{'color':'red','shape':'dot','label':'Senacor'},
+                        hr:{'color':'green','shape':'dot','label':'Human Res.'},
+                        ps:{'color':'blue','shape':'dot','label':'Prof. Service'},
+                        kl:{'color':'orange','shape':'dot','label':'KL', radius:3},
+                        rw:{'color':'green','shape':'dot','label':'RW', radius:2},
+                        rs:{'color':'red','shape':'dot','label':'RS', radius:2},
+                        ctk:{'color':'blue','shape':'dot','label':'CTK', radius:1}
+                    }, edges:{
+                        senacor:{ hr:{length:3}, ps:{length:5} },
+                        kl:{ hr:{} },
+                        rw:{ ps:{} },
+                        rs:{ ps:{} },
+                        ctk:{ ps:{} }
+                    }
+                };
+                
+                sys.merge(postLoadData);
+                
+                setTimeout(function() {
+                    // var ralph = sys.getNode('ralph');
+                    // sys.tweenNode(ralph, 3, {color:"red"})
+                    var postLoadData = {
+                    nodes:{
+                        senacor:{'color':'red','shape':'dot','label':'Senacor'},
+                        hr:{'color':'green','shape':'dot','label':'Human Res.'},
+                        ps:{'color':'blue','shape':'dot','label':'Prof. Service'},
+                        kl:{'color':'orange','shape':'dot','label':'KL', radius:3},
+                        rw:{'color':'green','shape':'dot','label':'RW', radius:2},
+                        ctk:{'color':'blue','shape':'dot','label':'CTK', radius:1}
+                    }, edges:{
+                        senacor:{ hr:{length:3}, ps:{length:5} },
+                        kl:{ hr:{} },
+                        rw:{ ps:{} },
+                        ctk:{ ps:{} }
+                    }
+                };
+                
+                sys.merge(postLoadData);
+                }, 3000);
+
+                setTimeout(function() {
+                    // alert("doing json now");
+                    // var data2 = { nodes:{ kl:{'color':'orange','shape':'dot','label':'KL', radius:3}, mt:{'label':'Matthias'}, mp:{'label':'Marcus'}, rw:{'label':'Ralph'}, }, edges:{ kl:{mt:{}, mp:{}, rw:{}, } }};
+                    // sys.graft(data2);
+                    
+                    // in case of parser errors - check with "http://jsonlint.com/"
+                    jQuery.getJSON("jersey-neo4j/spring/dump", function(data) {
+                        sys.merge(data);
+                    })                    
+                    
+                }, 5000);
+            },5000);
+            
+            
+        </script>
+    </body>
+</html>

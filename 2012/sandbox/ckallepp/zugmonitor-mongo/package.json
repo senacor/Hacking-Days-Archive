@@ -1,0 +1,8 @@
+{
+    "name":         "zugmonitor-mongo",
+    "version":      "0.0.1",
+    "engine":       "node >= 0.6.x",
+    "dependencies": {
+        "mongoose"  : "2.5.x"
+    }
+}

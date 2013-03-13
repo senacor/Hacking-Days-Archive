@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content = "width = device-width, initial-scale = 1.0, user-scalable = yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<link rel="stylesheet" href="my.css" />
+		
+		<style>
+			/* App custom styles */
+		</style>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script language="javascript" type="text/javascript" src="js/arbor.js"></script>
+		<script language="javascript" type="text/javascript" src="js/arbor-tween.js"></script>
+		<script language="javascript" type="text/javascript" src="js/graphics.js"></script>
+		<script language="javascript" type="text/javascript" src="js/renderer.js"></script>
+	        <script src="jq-urlparser.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="profile">
+			<script>
+                var backUrlProfile;
+                var backUrlConnect;
+                var username;
+                var spinner = true;
+				
+				function readParam() {
+                    $.mobile.showPageLoadingMsg("lade Netzwerk ...");
+					$(document).unbind('pageshow', readParam);
+					
+					url = window.location.href;
+					anchor = $.url(url).param('anchor');   // now unused
+					username = $.url(url).param('user');
+
+                    backUrlProfile = "login.html?user="+username+"#profile";
+                    backUrlConnect = "login.html?user="+username+"#connect";
+                }
+								
+				$(document).bind('pageshow', readParam); 
+			</script>
+		
+			<div data-role="content" style="padding: 15px">
+                <!-- header -->
+                <div data-role="header" data-id="navheader" data-position="fixed" data-theme="c">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="javascript:switchBackToUrl(backUrlProfile)">Profile</a></li>
+                            <li><a href="javascript:switchBackToUrl(backUrlConnect)">Connect</a></li>
+                            <li><a href="#" class="ui-btn-active ui-state-persist">Graph</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <canvas id="viewport" width=100% height=100%></canvas>
+			</div>
+		</div>
+		
+		<script>
+			viewport.width = window.innerWidth;
+			viewport.height = window.innerHeight;
+	
+			// viewport.style.border = "blue 1px solid";
+			
+			var sys = arbor.ParticleSystem(200, 400, 0.2);
+			sys.parameters({gravity:true});
+			sys.renderer = Renderer("#viewport") ;
+
+            function switchBack() {
+                window.location.href = backUrl;
+            }
+
+            function switchBackToUrl(url) {
+                window.location.href = url;
+            }
+
+
+            setInterval(function() {
+                if (spinner == true) {
+                    $.mobile.hidePageLoadingMsg();
+                }
+
+				if (typeof(username) != 'undefined' && username !== "") {
+					jQuery.getJSON("/rest/person/"+username+"/_visualisation?depth=2")
+					.success(function(data) {
+						sys.merge(data);
+					})
+					.error(function(xhr, ajaxOptions, thrownError) {
+						alert("error: " + thrownError + "; status: " + xhr.status + "; statusText: " + xhr.statusText)
+					});
+				}
+			}, 5000);
+		</script>
+	</body>
+</html>

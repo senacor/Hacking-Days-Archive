@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title></title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<link rel="stylesheet" href="my.css" />
+		<style>
+			/* App custom styles */
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	</head>
+	<body>
+	
+		<!-- profile page -->
+		<div data-role="page" id="profile">
+			<script>
+		  $(document).bind('pageinit', function() {
+                alert("hallo");
+		// $.url.param("itemID")
+            });
+		</script>
+			<div data-role="content" style="padding: 15px">
+	
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#profile" data-theme="" data-icon="" class="ui-btn-active ui-state-persist"> Profile </a></li>
+						<li><a href="#connect" data-theme="" data-icon=""> Connect </a></li>
+					</ul>
+				</div>
+	
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<h4>Username</h4>
+					</div>
+					<div class="ui-block-b">here is the username</div>
+					<div class="ui-block-a">
+						<h4>Lastname</h4>
+					</div>
+					<div class="ui-block-b">here is the lastname</div>
+					<div class="ui-block-a">
+						<h4>Firstname</h4>
+					</div>
+					<div class="ui-block-b">here is the firstname</div>
+				</div>
+			</div>
+	
+			<div data-theme="a" data-role="footer" data-position="fixed">
+				<a data-role="button" data-transition="fade" href="#page1"> Show Connections </a>
+			</div>
+		</div>
+	
+		<!-- connect page -->
+		<div data-role="page" id="connect">
+			<div data-role="content" style="padding: 15px">
+	
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#profile" data-theme="" data-icon=""> Profile </a></li>
+						<li><a href="#connect" data-theme="" data-icon="" class="ui-btn-active ui-state-persist"> Connect </a></li>
+					</ul>
+				</div>
+				
+				ADD CONTENT HERE!
+				
+				<div data-theme="a" data-role="footer" data-position="fixed">
+					<a data-role="button" data-transition="fade" href="#page1"> Show Connections </a>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			//App custom javascript
+		</script>
+	</body>
+</html>

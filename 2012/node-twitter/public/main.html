@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <title>Senacor Social Network Client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Senacor HackingDays 2012">
+
+  <!-- Le styles -->
+  <link href="/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Le fav and touch icons -->
+  <!--
+  <link rel="shortcut icon" href="../ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
+  -->
+</head>
+
+<body onload="onBodyLoad();">
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">Hacking Days 2012</a>
+
+      <div class="btn-group pull-right">
+        <a class="btn" onclick=pageRefresh();><i id="icon-refresh" class="icon-refresh"></i></a>
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i id="icon-user" class="icon-user"></i><span
+                class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/logout">Sign Out</a></li>
+          <li class="active"><a href="/tweetsreport.html">See a full tweet report for each user here...</a></li>        </ul>
+      </div>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top: 60px">
+  <div id="geoinfo" class="alert alert-info">
+    <button class="close" data-dismiss="alert">×</button>
+    Trying to determine your current location...
+  </div>
+
+  <div id="geosuccess" class="alert alert-success" style="display: none">
+    <button class="close" data-dismiss="alert">×</button>
+    <strong>Success!</strong> Your current location has been retrieved.
+  </div>
+
+  <div id="geoerror" class="alert alert-error" style="display: none">
+    <button class="close" data-dismiss="alert">×</button>
+    <strong>Failure!</strong> Something went wrong while retrieving your current location...
+  </div>
+
+  <div id="devinfo" class="alert alert-info" style="display: none">
+    <button class="close" data-dismiss="alert">×</button>
+    Loading device properties...
+  </div>
+
+  <div id="devsucess" class="alert alert-success" style="display: none">
+    <button class="close" data-dismiss="alert">×</button>
+    <p></p><strong>Success!</strong></p>
+    <p id="devicePropertiesSuccess"></p>
+  </div>
+
+  <div id="deverror" class="alert alert-error" style="display: none">
+    <button class="close" data-dismiss="alert">×</button>
+    <p><strong>Failure!</strong></p>
+
+    <p id="devicePropertiesFailure"></p>
+  </div>
+
+
+  <div class="row">
+    <div class="span12">
+      <form class="well">
+        <div id="smallImageDiv" class="thumbnail" style="display:none">
+          <img style="width:240px" id="smallImage" src="" />
+          <br>
+        </div>
+        <textarea id="message" class="input-xlarge" style="width:99%" name="message"
+                  placeholder="Please insert your message..." rows="2"></textarea><br/>
+          <button type="button" class="btn btn-primary" onclick="sendMessage();">Send message</button>
+          <input id="file_input" type="file" name="file"/>
+          <button id="cmdCapturePhoto" type="button" class="btn" onclick="capturePhoto();"
+                  style="display: none">Capture Photo</button>
+          <button id="cmdCapturePhotoWithEdit" type="button" class="btn"
+                  onclick="capturePhotoEdit();"style="display: none">Capture Editable Photo</button>
+      </form>
+      <div class="well">
+        <div id="followers">Followers:</div>
+        <div id="following">Following:</div>
+      </div>
+    </div>
+  </div>
+  <!-- end message row -->
+
+  <h1 id="timeline">User messages</h1>
+
+</div>
+<!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/spin.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/cordova-1.8.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/cordova-utils.js"></script>
+<script type="text/javascript">
+  var socket = io.connect(),
+          user;
+
+  /**
+   * Reads a file object using the FileReader and calls the callback function
+   * @param file The file object, e.g. from an input file field
+   * @param callback An optional callback function which is called with the file and event object ( function(file, evt){} )
+   */
+  function readFile(file, callback) {
+    var reader = new FileReader();
+    reader.onload = function (evt) {
+      if (typeof callback == "function")
+        callback(file, evt);
+    };
+    reader.onerror = function (error) {
+      console.log(error);
+    };
+    //reader.readAsBinaryString( file );
+    reader.readAsDataURL(file);
+  }
+
+
+  var smallOpts = {
+    width:2, // The line thickness
+    radius:2 // The radius of the inner circle
+  };
+  var largeOpts = {
+    width:2, // The line thickness
+    radius:15 // The radius of the inner circle
+  };
+
+  var target = document.getElementById('following');
+  var spinnerFollowing = new Spinner(smallOpts).spin(target);
+
+  var target = document.getElementById('followers');
+  var spinnerFollowers = new Spinner(smallOpts).spin(target);
+
+  var target = document.getElementById('timeline');
+  var spinnerTweets = new Spinner(largeOpts).spin(target);
+
+  // get the name of the logged in user
+  socket.on('user', function (data) {
+    console.log(data);
+    user = data.user;
+    $('<span> ' + user + '</span>').insertAfter('.icon-user');
+  });
+
+  // get the names of the follower
+  socket.on('follower', function (follower) {
+    console.log(follower);
+    spinnerFollowers.stop();
+    for (var i = 0; i < follower.length; i++) {
+      $('<span> ' + follower[i] + '</span>').insertAfter('#followers');
+    }
+  });
+
+  // get the names of the follower
+  socket.on('following', function (following) {
+    console.log(following);
+    spinnerFollowing.stop();
+    for (var i = 0; i < following.length; i++) {
+      $('<span> ' + following[i] + '</span>').insertAfter('#following');
+    }
+  });
+
+  // receive
+  socket.on('tweet', function (data) {
+    console.log("on tweet: " + data);
+    spinnerTweets.stop();
+
+    var tweetblock = [];
+    tweetblock.push('<div class="well"><div style="float: left">');
+    if (data.image) {
+      tweetblock.push('<img src="');
+      tweetblock.push(data.image);
+      tweetblock.push('"style="width: 40px; height: 45px" />');
+    }
+    tweetblock.push('</div><div style="padding-left: 50px"><blockquote>');
+    tweetblock.push(data.content);
+    tweetblock.push("<small>");
+    tweetblock.push(data.author);
+    tweetblock.push(', ');
+    tweetblock.push(data.timestamp);
+    tweetblock.push('</small>');
+    tweetblock.push('</blockquote></div></div>');
+
+    $(tweetblock.join("")).insertAfter('#timeline');
+  });
+
+  // send
+  function sendMessage() {
+    console.log("user: " + user + " content: " + $('#message').val());
+
+    var input = document.getElementById("file_input");
+    var tmp_file;
+    var smallImageForSend = document.getElementById('smallImage');
+    var imageData = smallImageForSend.src;
+
+
+    // if an file is added to the input file the tweet will be send in the callback with the image data.
+    if (input.files[0]) {
+      readFile(input.files[0], function (file, evt) {
+        console.log(evt.target.result);
+        socket.emit('newTweet', {author:user,
+          timestamp:new Date(),
+          content:$('#message').val(),
+          image:evt.target.result});
+        $('#message').val('');
+        $('#file_input').val('');
+        console.log (evt.target.result);
+
+      });
+    } else if (typeof(phonegapHackingdays) != "undefined" && phonegapHackingdays && smallImageDiv.style.display == 'block'){
+
+          socket.emit('newTweet', {author:user,
+          timestamp:new Date(),
+          content:$('#message').val(),
+          image:imageData});
+          $('#message').val('');
+          smallImageForSend.src = "";
+          smallImage.style.display = 'none';
+          smallImageDiv.style.display = 'none';
+
+    }else{
+      // If not file is avalible the data will be pushed without image.
+      socket.emit('newTweet', {author:user,
+        timestamp:new Date(),
+        content:$('#message').val()});
+      $('#message').val('');
+      $('#file_input').val('');
+    }
+
+
+  }
+  // sendMessageWithPhoto
+  function sendMessageWithPhoto() {
+    var smallImageForSend = document.getElementById('smallImage');
+    var imageData = smallImage.src;
+    console.log("user: " + user + " content: " + $('#message').val());
+    console.log("user: " + user + " content: " + imageData);
+    socket.emit('newTweet', {author : user, timestamp : new Date(), content : $('#message').val(), imageData : imageData});
+    $('#message').val('');
+  }
+  // callback for sucessfully retrieving geo-location
+  function success(position) {
+    console.log('latitude: ' + position.coords.latitude + ' longitude: ' + position.coords.longitude);
+    $('#geoinfo').hide();
+    $('#geosuccess').show();
+  }
+
+  // error callback function for retrieving geo-location
+  function error(message) {
+    //console.log(message);
+    $('#geoinfo').hide();
+    console.log(message);
+    $('#geoerror').show();
+  }
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error, {timeout:30000});
+  } else {
+    error('not supported');
+    $('#geoerror').show();
+  }
+
+</script>
+</body>
+</html>

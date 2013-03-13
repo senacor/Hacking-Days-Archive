@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title></title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<link rel="stylesheet" href="my.css" />
+		
+		<style>
+			/* App custom styles */
+		</style>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script language="javascript" type="text/javascript" src="js/arbor.js"></script>
+		<script language="javascript" type="text/javascript" src="js/arbor-tween.js"></script>
+		<script language="javascript" type="text/javascript" src="js/graphics.js"></script>
+		<script language="javascript" type="text/javascript" src="js/renderer.js"></script>
+	        <script src="jq-urlparser.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="profile">
+			<script>
+				var backUrl;
+				
+				function readParam() {
+					$(document).unbind('pageshow', readParam);
+					
+					url = window.location.href;
+					anchor = $.url(url).param('anchor');
+					username = $.url(url).param('user');
+					
+					backUrl = "login.html?user="+username+"#"+anchor;
+				}
+								
+				$(document).bind('pageshow', readParam); 
+			</script>
+		
+			<div data-role="content" style="padding: 15px">
+				<canvas id="viewport" width=100% height=100%></canvas>
+				<div data-theme="a" data-role="footer" data-position="fixed">
+					<a data-role="button" data-transition="flip" href="javascript:switchBack()"> Show Profile </a>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			function switchBack() {
+				window.location.href = backUrl;	
+			}
+			
+			viewport.width = window.innerWidth;
+		        viewport.height = window.innerHeight;
+
+			viewport.style.border = "blue 1px solid";
+			
+			var sys = arbor.ParticleSystem(200, 400, 0.2);
+			sys.parameters({gravity:true});
+			sys.renderer = Renderer("#viewport") ;
+			
+			var data = {"nodes":{"hstamminger":{"label":"hstamminger","shape":"dot","color":"green"},"akeefer":{"label":"akeefer","shape":"dot","color":"blue"},"rwinzinger":{"label":"rwinzinger","shape":"dot","color":"green"},"ogalimov":{"label":"ogalimov","shape":"dot","color":"red"},"spalm":{"label":"spalm","shape":"dot","color":"blue"}},"edges":{"ogalimov":{"akeefer":{"length":3},"spalm":{"length":3}},"spalm":{"hstamminger":{"length":3},"akeefer":{"length":3},"rwinzinger":{"length":3}}}}
+			
+			/*
+			var data = {
+			    nodes:{
+				senacor:{'color':'red','shape':'dot','label':'Senacor'},
+				hr:{'color':'green','shape':'dot','label':'Human Res.'},
+				ps:{'color':'blue','shape':'dot','label':'Prof. Service'}
+			    }, edges:{
+				senacor:{ hr:{length:1}, ps:{length:0.7} }
+			    }
+			}
+			*/
+			
+			sys.graft(data);
+		</script>
+	</body>
+</html>

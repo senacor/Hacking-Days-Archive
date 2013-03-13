@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Senacor Social Network Client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Senacor HackingDays 2012">
+
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <!--
+    <link rel="shortcut icon" href="../ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
+    -->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Hacking Days 2012</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top: 60px">
+      <div class="alert alert-info">
+        <button class="close" data-dismiss="alert">×</button>
+        Trying to determine your current location...
+      </div>
+
+      <div class="alert alert-success" style="display: none">    
+        <button class="close" data-dismiss="alert">×</button>
+        <strong>Success!</strong> Your current location has been retrieved.           
+      </div>
+
+      <div class="alert alert-error" style="display: none">
+        <button class="close" data-dismiss="alert">×</button>
+        <strong>Failure!</strong> Something went wrong while retrieving your current location...                                             
+      </div>
+
+      <div class="row">
+        <div class="span12">
+          <form class="well">
+            <textarea id="message" class="input-xlarge" style="width:99%" name="message" placeholder="Please insert your message..." rows="2"></textarea><br />
+            <button type="button" class="btn btn-primary" onclick="sendMessage();">Send message</button>
+          </form>
+        </div>
+      </div><!-- end message row -->
+
+      <h1 id="timeline">User messages</h1>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        var socket = io.connect(),
+            user;
+
+        // get the name of the logged in user
+        socket.on('user', function(data) {
+            console.log(data);
+            user = data.user;
+        });
+
+        // show the tweeted messages
+        socket.on('messages', function(data) {
+            console.log(data);
+            $('<blockquote>' + data.message +'<small>' 
+                + data.buddy + ', ' 
+                + new Date 
+                + '</small></blockquote>')
+            .insertAfter('#timeline');
+        });
+
+        function sendMessage() {
+            socket.emit('sendMessage', {author : user, timestamp : new Date(), content : $('#message').val()});
+            $('#message').val(''); 
+        }
+
+        // callback for sucessfully retrieving geo-location
+        function success(position) {
+            console.log('latitude: ' + position.coords.latitude + ' longitude: ' + position.coords.longitude);
+            $('.alert alert-info').hide();
+            $('.alert alert-success').show(5000);
+        }
+
+        // error callback function for retrieving geo-location
+        function error(message) {
+            console.log(message);
+            $('.alert alert-info').hide();
+            $('.alert alert-error').show(5000);
+        }
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, error, {timeout : 30000});
+        } else {
+            error('not supported');
+            $('.alert alert-error').show(5000);
+        }
+
+    </script>
+
+  </body>
+</html>

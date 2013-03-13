@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>Senacor NetWork</title>
+
+		<link rel="stylesheet" href="stylesheets/jquery.mobile-1.1.0.min.css" />
+		<link rel="stylesheet" href="my.css" />
+		<link rel="stylesheet" href="stylesheets/themes/senacor.min.css" />
+		<link rel="stylesheet" href="stylesheets/jquery.mobile.structure-1.1.0.css" />
+		<link rel="stylesheet" href="stylesheets/add2home.css">
+
+		<style>
+			/* App custom styles */
+		</style>
+	
+		<script src="jquery.min.js"></script>
+		<script src="jquery.mobile-1.1.0.min.js"></script>
+		<script src="jq-templating.js"></script>
+		<script src="jq-urlparser.js"></script>
+	</head>
+	<body>
+		<!-- Home -->
+		<div data-role="page" id="login" data-theme="b">
+			<script>
+				var username;
+				
+				function readParam() {
+					$(document).unbind('pageshow', readParam);
+					
+					username = $.url(window.location.href).param('user');
+					
+					if (typeof(username) != 'undefined' && username !== "") {
+						$('#username').val(username);
+						readUserdata();
+					}
+				}
+												
+				$(document).bind('pageshow', readParam); 
+				
+				// http://cubiq.org/add-to-home-screen
+				// if (("standalone" in window.navigator) && !window.navigator.standalone) {}
+				var addToHomeConfig = {
+					animationIn: 'drop',
+					animationOut: 'drop',
+					lifespan:20000,
+					expire:2,
+					message:'Oops, die WebApp ist nicht im Vollbildmodus! Bitte leg ein \"Zum Home-Bildschirm\" Lesezeichen an und starte neu'
+				};
+			</script>
+			<script type="application/javascript" src="js/add2home.js"></script>
+	
+			<div data-role="content" style="padding: 15px">
+				<div style="display: inline text-align:center">
+					<img src="http://www.senacor.com/senacor_logo.png" />
+				</div>
+				<h1>NetWork</h1>
+				<h3>Access your NetWork</h3>
+				<div data-role="collapsible-set">
+					<div data-role="collapsible" data-content-theme="a">
+   						<h3>Existing User</h3>
+						<div data-role="fieldcontain">
+							<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+								<label for="username">Username</label>
+								<input id="username" placeholder="your username" value="backdoor" type="text" />
+							</fieldset>
+						</div>
+						<div data-role="fieldcontain">
+							<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+								<label for="password">Password</label>
+								<input id="password" placeholder="your password" value="" type="text" />
+							</fieldset>
+						</div>
+						<a id="buttonlogin" data-role="button" data-inline="false" data-transition="fade"> Login </a>
+					</div>
+					<div data-role="collapsible" data-content-theme="a">
+						<h3>New User</h3>
+						<a id="buttoncreate" data-role="button" data-inline="false" data-transition="fade">Create Account</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<!-- profile page -->
+	
+		<div data-role="page" id="profile" data-theme="c">
+			<div data-role="content" style="padding: 15px">
+				<!-- header -->
+				<div data-role="header" data-id="navheader" data-position="fixed" data-theme="c">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#profile" class="ui-btn-active ui-state-persist">Profile</a></li>
+							<li><a href="#connect">Connect</a></li>
+							<li><a href="javascript:switchToGraph('profile')">Graph</a></li>
+						</ul>
+					</div>
+				</div>
+	
+				<!-- body -->
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<label for="usernamelabel"><strong>Username</strong></label>
+						<input id="usernamelabel" value="" type="text" disabled="disabled" readonly="readonly" />
+					</fieldset>
+				</div>
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<label for="lastname"><strong>Lastname</strong></label>
+						<input id="lastname" placeholder="your lastname" value="" type="text" />
+					</fieldset>
+				</div>
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<label for="firstname"><strong>Firstname</strong></label>
+						<input id="firstname" placeholder="your firstname" value="" type="text" />
+					</fieldset>
+				</div>
+				<a id="editSaveButton" data-role="button" data-inline="true" mode="EDIT"> <span id="editSaveCaption">Edit</span></a>
+				<!-- mode=EDIT -> input fields are readonly; mode=SAVE -> input fields are writable -->
+			</div>
+		</div>
+	
+		<!-- connect page -->
+		<div data-role="page" id="connect" data-theme="c">
+			<div data-role="content">
+				<div data-role="header" data-id="navheader" data-position="fixed" data-theme="c">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#profile">Profile</a></li>
+							<li><a href="#connect" class="ui-btn-active ui-state-persist">Connect</a></li>
+							<li><a href="javascript:switchToGraph('connect')">Graph</a></li>
+						</ul>
+					</div>
+				</div>
+	
+				<!-- div data-role="fieldcontain" -->
+					<ul data-role="listview" data-theme="b" data-filter="true" class="personList">
+						<div class="empty list">Daten noch nicht geladen</div>
+					</ul>
+				<!-- /div -->
+
+				<div>
+					<select name="nodeSelector" id="nodeSelector" class="nodeSelector">
+						<option value="subject">Themen laden ...</option>
+						<option value="person">Personen laden ...</option>
+						<option value="location">Orte laden ...</option>
+					</select>
+				</div>
+	
+			</div>
+		</div>
+
+		<div data-role="page" id="linking">
+			<div data-role="content" style="padding: 15px">
+				<div class="linkingMsg"></div>
+				<a href="#connect" data-rel="back" data-role="button" data-icon="delete">take me back</a>
+			</div>
+		</div>
+	
+		<!-- error page -->
+		<div data-role="page" id="error">
+			<div data-role="content" style="padding: 15px">
+				<div class="errorMsg"></div>
+				<a href="#" data-rel="back" data-role="button" data-icon="delete">schlie&szlig;en</a>
+			</div>
+		</div>
+	
+		<!-- success page -->
+		<div data-role="page" id="success">
+			<div data-role="content" style="padding: 15px">
+				<div class="successMsg"></div>
+				<a href="#" data-rel="back" data-role="button" data-icon="delete">schlie&szlig;en</a>
+			</div>
+		</div>
+	
+		<!-- info page -->
+		<div data-role="page" id="info">
+			<div data-role="content" style="padding: 15px">
+				<div class="infoMsg"></div>
+				<a href="#" data-rel="back" data-role="button" data-icon="delete">schlie&szlig;en</a>
+			</div>
+		</div>
+	
+		<!-- confirmer -->
+		<div data-role="page" id="sure" data-title="Are you sure?">
+			<div data-role="content">
+				<h3 class="sure-1">???</h3>
+				<p class="sure-2">???</p>
+				<a href="#" class="sure-do" data-role="button" data-theme="b" data-rel="back">Yes</a>
+				<a href="#" data-role="button" data-theme="c" data-rel="back">No</a>
+			</div>
+		</div>
+		
+		<script id="personTmpl" type="text/x-jquery-tmpl">
+			<li>
+				<a href="javascript:addPerson('${username}')"><img src="${iconLink}" class="ui-li-thumb"/>${username}</a>
+				<div class="ui-li-count">${numFollowers}</div>
+			</li>
+		</script>
+
+		<script type="text/javascript">
+			// dialogs
+			function areYouSure(text1, text2, button, callback) {
+				$("#sure .sure-1").text(text1);
+				$("#sure .sure-2").text(text2);
+				$("#sure .sure-do").text(button).on("click.sure", function() {
+					callback();
+					$(this).off("click.sure");
+				});
+				$.mobile.changePage("#sure", {role: 'dialog'});
+			}
+	
+	
+			function switchToGraph(anchor) {
+				window.location.href="graph.html?anchor="+anchor+"&user="+username;
+				// geht nicht, da ajax ... $.mobile.changePage( "graph.html", { transition: "flip", data:{anchor:anchor, username:username}} );
+			}
+	
+	
+			function showErrorDialog(msg) {
+				$("div.errorMsg").text(msg);
+				$.mobile.changePage("#error", {role: 'dialog'});   
+			}
+	
+	
+			function showSuccessDialog(msg) {
+				$("div.successMsg").text(msg);
+				$.mobile.changePage("#success", {role: 'dialog'});   
+			}
+	
+
+			function showInfoDialog(msg) {
+				$("div.infoMsg").text(msg);
+				$.mobile.changePage("#info", {role: 'dialog'});   
+			}
+	
+
+			function showLinkingPagePending(name) {
+				$("div.linkingMsg").text("ich versuche Dich mit "+name+" zu verkuppeln ...");
+				$.mobile.changePage("#linking", {role: 'slide'});   
+			}
+	
+			function showLinkingPageDone(name) {
+				$("div.linkingMsg").text("Prima! Du kennst nun "+name+".");
+			}
+	
+			// login user
+	
+			$("#buttonlogin").bind("click", readUserdata);
+	
+	
+			function readUserdata(event) {
+				username = $('#username').val();
+				apiUrl = "/rest/person/"+username;
+	
+				// falls backdoor-user, einfach auf profilseite wechseln
+				if (username === "backdoor") {
+					$.mobile.changePage("#profile");
+					return;
+				}
+	
+	
+				$.mobile.showPageLoadingMsg();
+				jQuery.getJSON(apiUrl)
+				.success(function(userdata) {
+					//alert("userdata:" + userdata.username);
+					initprofilefields(userdata);
+					$.mobile.changePage("#profile");
+				})
+				.error(function (xhr, ajaxOptions, thrownError) {
+					if (xhr.status == 404) {
+						showErrorDialog("User nicht vorhanden");
+					} else {
+						showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")" + "[" + thrownError + "]");
+					}
+				})
+				.complete(function() {
+					$.mobile.hidePageLoadingMsg();
+				});
+			}
+	
+			// create user
+	
+			$("#buttoncreate").bind("click", function(event) {
+				username = $('#username').val();
+				apiUrl = "/rest/person/"+username;
+				
+				payload = {"firstname":"dummy","lastname":"dummy","username":username};
+	
+				jQuery.ajax({
+					type : "PUT",
+					url : apiUrl,
+					data : JSON.stringify(payload),
+					contentType: "application/json",
+					dataType: "json"
+				})
+				.success(function() {
+					readUserdata();
+				})
+				.error(function (xhr, ajaxOptions, thrownError) {
+					user = null;
+					showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+				});	
+			});
+	
+	
+			$("#nodeSelector").bind("change", function(event, ui) {
+				selectedVal = $(this).val();
+			
+				if (selectedVal == "person") {
+					loadPersons();
+				} else {
+					showErrorDialog("not implemented");
+				}
+			});
+	
+	
+			function addPerson(peername) {
+				apiUrl = "/rest/person/"+username+"/peers/"+peername;
+				// alert("json put "+apiUrl);
+				
+				showLinkingPagePending(peername)
+				jQuery.ajax({
+					type : "PUT",
+					url : apiUrl
+				})
+				.complete(function(xhr) {
+					if (xhr.status == 200) {
+						showSuccessDialog("Prima, Du kennst nun "+peername);
+					} else {
+						showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+					}
+				})
+				.success(function() {
+				    showLinkingPageDone(peername)
+				})
+				.error(function (xhr, ajaxOptions, thrownError) {
+					showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+				});	
+			}
+	
+	
+			function loadPersons() {
+				$.mobile.showPageLoadingMsg();
+								
+				apiUrl = "/rest/person/topTen";
+				jQuery.ajax({
+					type : "GET",
+					url : apiUrl
+				})
+				.success(function(data) {
+					personList = $("#connect").find(".personList" );
+					personList.empty();
+					
+					$("#personTmpl").tmpl(data).appendTo(".personList");
+					
+					personList.listview( "refresh" );
+				})
+				.error(function (xhr, ajaxOptions, thrownError) {
+					if (xhr.status == 404) {
+						showErrorDialog("Keine Follower");
+					} else {
+						showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+					}
+				})
+				.complete(function() {
+					$.mobile.hidePageLoadingMsg();
+				})
+				;
+				
+				$.mobile.hidePageLoadingMsg();
+			};
+	
+	
+			$("#editSaveButton").bind("click", function(event) {
+				// save
+				if ($("#editSaveButton").attr("mode") === 'SAVE') {
+					var payload = {
+						"firstname" : $("#firstname").val(),
+						"lastname" : $("#lastname").val(),
+						"username" : $("#usernamelabel").val()
+					};
+	
+					jQuery.ajax({
+						type : "PUT",
+						url : "/rest/person/" + payload.username,
+						data : JSON.stringify(payload),
+						contentType: "application/json",
+						dataType: "json"
+					})
+					.success(function(postresponsedata) {
+						toggleEditSaveButton();
+						configureFirstLastNameFields($("#editSaveButton").attr("mode"));
+						showSuccessDialog("Dei Date sin nu in de Datebank neigrepresst.");
+					})
+					.error(function (xhr, ajaxOptions, thrownError) {
+						showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+					});
+	
+				} else {
+					toggleEditSaveButton();
+					configureFirstLastNameFields($("#editSaveButton").attr("mode"));
+				}
+			});
+
+
+			function toggleEditSaveButton() {
+				$("#editSaveButton").attr("mode", $("#editSaveButton").attr("mode") === 'EDIT' ? 'SAVE' : 'EDIT');
+				$("#editSaveCaption").text($("#editSaveButton").attr("mode") === 'EDIT' ? 'Edit' : 'Save');
+			}
+
+
+			function configureFirstLastNameFields(mode) {
+				$("#lastname").prop('disabled', mode === 'EDIT');
+				$("#firstname").prop('disabled', mode === 'EDIT');
+			}
+
+
+			function initprofilefields(user) {
+				if(user != null) {
+					configureFirstLastNameFields($("#editSaveButton").attr("mode"));
+					$("#usernamelabel").val(user.username);
+					$("#lastname").val(user.lastname);
+					$("#firstname").val(user.firstname);
+				}
+			}
+
+
+			$("#deleteProfileButton").bind("click", function(event) {
+				areYouSure("Are you sure?", "Please confirm deletion of profile.", "Yes", function() {
+					var payload = {
+						"firstname" : $("#firstname").val(),
+						"lastname" : $("#lastname").val(),
+						"username" : $("#usernamelabel").val()
+					};
+
+					jQuery.ajax({
+						type : "DELETE",
+						url : "/rest/person/" + payload.username,
+						data : JSON.stringify(payload),
+						contentType: "application/json",
+						dataType: "json"
+					})
+					.success(function(postresponsedata) {
+						window.location.href="login.html"; //$.mobile.changePage("#profile");
+					})
+						.error(function (xhr, ajaxOptions, thrownError) {
+						showErrorDialog("Sorry, Tiger: "+xhr.statusText+" ("+xhr.status+")");
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
