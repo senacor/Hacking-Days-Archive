@@ -31,8 +31,8 @@ public class AmazonService {
 
 	private static final String REQUEST_METHOD = "GET";
 	private String endpoint = "sdb.eu-west-1.amazonaws.com"; // must be lowercase
-	private String awsAccessKeyId = "AKIAJ2RGFUTFGIF3DZDA";
-	private String awsSecretKey = "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";
+	private String awsAccessKeyId = "xxx";
+	private String awsSecretKey = "xxx";
 	private String REQUEST_URI = "/"; // "/onca/xml";
 	private SecretKeySpec secretKeySpec = null;
 	private Mac mac = null;
